@@ -86,6 +86,7 @@ var then;
 var delta;
 var gravity = 1.2;
 var jump_int;
+var make_pipe;
 var pipe_int = 4000;
 var pipe_speed = 50;
 var blocks_cleared = 0;
@@ -181,6 +182,7 @@ var reset_game = function () {
 
 	game = setInterval(main, 1); // Execute as fast as possible
 
+	pipes = [];
 	make_pipes();
 }
 
@@ -190,6 +192,7 @@ var game_over = function() {
 
 	// alert('game over!');
 	console.log('game over..');
+	clearInterval( make_pipe );
 	clearInterval(game);
 
 	// Display the restart button
@@ -202,7 +205,7 @@ var game_over = function() {
 }
 
 var make_pipes = function() {
-	var make_pipe = setInterval(function() {
+	make_pipe = setInterval(function() {
 		console.log('New pipe coming');
 		var pipe = new Pipe( (canvas.width - 100), (canvas.height - 200), 100, 200, 'yellow', 'images/pipe.png');
 	}, pipe_int);
@@ -225,7 +228,7 @@ var animate_bird = function( modifier ) {
 	jump_int = setInterval(function() { 
 		//console.log(modifier+' '+ modifier * 10);
 		bird.is_jumping == true;
-		bird.y -= bird.speed * i;
+		bird.y -= ( bird.speed * i );
 		if ( bird.y <= 0 ) { bird.y = 0; };
 		i = i-gravity;
 	}, 20);
