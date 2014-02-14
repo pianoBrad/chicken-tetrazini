@@ -25,6 +25,33 @@ birdImage.onload = function () {
 }
 birdImage.src = 'images/bird-test.png';
 
+var pipes = [];
+var pipeReady = false;
+function Pipe (pX, pY, pW, pH, color, image_url) {
+	//console.log('Pipe function called..');
+	var pipeReady = false;
+	this.color = color;
+	this.width = pW;
+	this.height = pH;
+	this.pX = pX;
+	this.pY = pY;
+
+	var that = this;
+
+	this.pipe_image = new Image();
+	this.pipe_image.onload=function() {
+    	try {
+    		pipes.push(that);
+    		//console.log('tester..'+that.pipe_image+that.pX+that.pY);
+        	//ctx.drawImage(that.pipe_image, that.pX, that.pY, that.width, that.height);
+    	} catch(err) {
+        	console.log('Onload: could not draw image '+that.url);
+        	console.log(err);
+    	}
+	};
+	this.pipe_image.src = image_url;
+}
+
 // Restart Button 
 var restart_btn_width = 200;
 var restart_btn_height = 100;
@@ -54,12 +81,14 @@ var then;
 var delta;
 var gravity = 1.2;
 var jump_int;
+var pipe_speed = 4000;
 var blocks_cleared = 0;
 var mouse_location = [];
 //Variables for the state/scene of the game
 var scene_game_over = false;
 var scene_game_intro = true;
 var scene_game_running = false;
+
 
 // Handle keyboard controls
 
@@ -142,9 +171,11 @@ var reset_game = function () {
 	scene_game_intro = true;
 
 	bird.x = canvas.width * 0.25,
-	bird.y = canvas.height - ( canvas.height * 0.45 )
+	bird.y = canvas.height - ( canvas.height * 0.45 );
 
 	game = setInterval(main, 1); // Execute as fast as possible
+
+	make_pipes();
 }
 
 var game_over = function() {
@@ -162,6 +193,12 @@ var game_over = function() {
 		ctx.drawImage(restart_btn, restart_btn_position_x, restart_btn_position_y);
 	} 
 
+}
+
+var make_pipes = function() {
+	console.log('make pipes function called');
+
+	var pipe = new Pipe( (canvas.width - 100), (canvas.height - 200), 100, 200, 'yellow', 'images/pipe.png');
 }
 
 
@@ -218,6 +255,18 @@ var render = function () {
 		} else { 
 			bird.is_grounded = false; 
 			ctx.drawImage( birdImage, bird.x, bird.y );
+		}
+	}
+
+	//Pipes
+
+	if ( pipes.length > 0 ) {
+		var p = 0;
+		while ( p < pipes.length ) {
+			//console.log(pipes[p]);
+			pipes[p].pX -= 1;
+			ctx.drawImage(pipes[p].pipe_image, pipes[p].pX, pipes[p].pY, pipes[p].width, pipes[p].height);
+			p++;
 		}
 	}
 
