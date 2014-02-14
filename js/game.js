@@ -26,6 +26,10 @@ birdImage.onload = function () {
 birdImage.src = 'images/bird-test.png';
 
 // Restart Button 
+var restart_btn_width = 200;
+var restart_btn_height = 100;
+var restart_btn_position_x = 0;
+var restart_btn_position_y = 0;
 var restart_btn_ready = false;
 var restart_btn = new Image();
 restart_btn.onload = function () {
@@ -52,15 +56,20 @@ var gravity = 1.2;
 var jump_int;
 var blocks_cleared = 0;
 var mouse_location = [];
-
+//Variables for the state/scene of the game
+var scene_game_over = false;
+var scene_game_intro = true;
+var scene_game_running = false;
 
 // Handle keyboard controls
 
 var keysDown = {};
 var currently_pressed = false;
+var mouse_currently_pressed = false;
 
 addEventListener( "keydown", function(e) {
 	keysDown[e.keyCode] = true;
+	if ( scene_game_over == true ) { reset_game(); }
 }, false);
 
 addEventListener( "keyup", function(e) {
@@ -70,10 +79,18 @@ addEventListener( "keyup", function(e) {
 
 document.addEventListener("DOMContentLoaded", init, false);
 canvas.addEventListener("mousedown", get_mouse_position, false);
-canvas.addEventListener("mouseup", function(){ currently_pressed = false; animate_bird( delta /1000 ); }, false);
+canvas.addEventListener("mouseup", function(){ mouse_currently_pressed = true; }, false);
 
 function init() {
     canvas.addEventListener("mousedown", get_mouse_position, false);
+}
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
 }
 
 var get_mouse_position = function(event) {
@@ -97,6 +114,19 @@ var get_mouse_position = function(event) {
     mouse_location = [x, y];
 
     //console.log(mouse_location[0])
+
+    //Determine if a button is clicked
+    if ( scene_game_over == true ) {
+    	//if mouse coordinates are within range of button display, restart the game
+    	if ( 
+    		mouse_location[0] > restart_btn_position_x 
+    		&& mouse_location[0] < ( restart_btn_position_x + restart_btn_width )
+    		&& mouse_location[1] > restart_btn_position_y
+    		&& mouse_location[1] < ( restart_btn_position_y + restart_btn_height )
+    	) {
+    		reset_game();
+    	} else { console.log('false'); }
+    } 
 }
 
 var get_object_coordinates = function() {
@@ -105,17 +135,31 @@ var get_object_coordinates = function() {
 
 // Reset the game when the player clicks play button
 
-var reset = function () {
+var reset_game = function () {
+	console.log('reset game');
+	scene_game_running = false;
+	scene_game_over = false;
+	scene_game_intro = true;
 
+	bird.x = canvas.width * 0.25,
+	bird.y = canvas.height - ( canvas.height * 0.45 )
+
+	game = setInterval(main, 1); // Execute as fast as possible
 }
 
 var game_over = function() {
-	//alert('game over!');
+	scene_game_running = false;
+	scene_game_over = true;
+
+	// alert('game over!');
 	console.log('game over..');
 	clearInterval(game);
 
+	// Display the restart button
 	if ( restart_btn_ready ) {
-		ctx.drawImage(restart_btn, 0, 0);
+		restart_btn_position_x = ( canvas.width / 2 ) - ( restart_btn_width / 2 );
+		restart_btn_position_y = ( canvas.height / 2 ) - ( restart_btn_height / 2 );
+		ctx.drawImage(restart_btn, restart_btn_position_x, restart_btn_position_y);
 	} 
 
 }
@@ -147,7 +191,8 @@ var animate_bird = function( modifier ) {
 }
 
 var update = function ( modifier ) {
-	if ( 32 in keysDown && currently_pressed == false ) { // Player just pressed spacebar
+	if ( isEmpty(keysDown) == false && currently_pressed == false || mouse_currently_pressed == true ) { // Player just pressed spacebar
+		mouse_currently_pressed = false;
 		currently_pressed = true;
 		animate_bird(modifier);
 	} 
@@ -187,6 +232,7 @@ var render = function () {
 
 // The main game loop
 var main = function () {
+	scene_game_running = true;
 	now = Date.now();
 	delta = now - then;
 
@@ -198,9 +244,8 @@ var main = function () {
 
 
 // Let's play this game!
-reset();
+reset_game();
 var then = Date.now();
-var game = setInterval(main, 1); // Execute as fast as possible
 
 
 
