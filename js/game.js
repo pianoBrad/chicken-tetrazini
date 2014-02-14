@@ -1,3 +1,8 @@
+/**************************************************
+				   TO DO
+	* Regulate the speed of the moving columns
+**************************************************/
+
 // Create the canvas
 
 var canvas = document.createElement("canvas");
@@ -81,7 +86,8 @@ var then;
 var delta;
 var gravity = 1.2;
 var jump_int;
-var pipe_speed = 4000;
+var pipe_int = 4000;
+var pipe_speed = 50;
 var blocks_cleared = 0;
 var mouse_location = [];
 //Variables for the state/scene of the game
@@ -196,9 +202,10 @@ var game_over = function() {
 }
 
 var make_pipes = function() {
-	console.log('make pipes function called');
-
-	var pipe = new Pipe( (canvas.width - 100), (canvas.height - 200), 100, 200, 'yellow', 'images/pipe.png');
+	var make_pipe = setInterval(function() {
+		console.log('New pipe coming');
+		var pipe = new Pipe( (canvas.width - 100), (canvas.height - 200), 100, 200, 'yellow', 'images/pipe.png');
+	}, pipe_int);
 }
 
 
@@ -234,6 +241,17 @@ var update = function ( modifier ) {
 		animate_bird(modifier);
 	} 
 
+	// Update position of Pipes
+
+	if ( pipes.length > 0 ) {
+		var p = 0;
+		while ( p < pipes.length ) {
+			//console.log(pipes[p]);
+			pipes[p].pX -= pipe_speed * modifier;
+			p++;
+		}
+	}
+
 	// Are they touching?
 
 };
@@ -264,7 +282,6 @@ var render = function () {
 		var p = 0;
 		while ( p < pipes.length ) {
 			//console.log(pipes[p]);
-			pipes[p].pX -= 1;
 			ctx.drawImage(pipes[p].pipe_image, pipes[p].pX, pipes[p].pY, pipes[p].width, pipes[p].height);
 			p++;
 		}
