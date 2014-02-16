@@ -1,10 +1,18 @@
-/**************************************************
-				   TO DO
-	* Regulate the speed of the moving columns
-**************************************************/
+// A cross-browser requestAnimationFrame
+// See https://hacks.mozilla.org/2011/08/animating-with-javascript-from-setinterval-to-requestanimationframe/
+var requestAnimFrame = (function(){
+    return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(callback){
+            window.setTimeout(callback, 1000 / 60);
+        };
+})();
+
 
 // Create the canvas
-
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 512;
@@ -12,352 +20,279 @@ canvas.height = 480;
 document.body.appendChild(canvas);
 
 
-// Include the images
-// Background image
 
-var bgReady = false;
-var bgImage = new Image();
-bgImage.onload = function() {
-	bgReady = true;
-};
-bgImage.src = "images/background.png";
+// The main game loop
+var last_time;
+function main() {
+	var now = Date.now();
+	var dt = ( now - last_time ) / 1000.0;
 
-// Bird Image
-var birdReady = false;
-var birdImage = new Image();
-birdImage.onload = function () {
-	birdReady = true;
+	update( dt );
+	render();
+
+	last_time = now;
+	requestAnimFrame(main);
 }
-birdImage.src = 'images/bird-test.png';
+
+// Once images have loaded, time to start the game
+function init() {
+	//console.log('all resources loaded..');
+    sky_pattern = ctx.createPattern(resources.get('images/background.png'), 'repeat');
+
+    document.getElementById('play-again').addEventListener('click', function() {
+        reset();
+    });
+
+    reset();
+    lastTime = Date.now();
+    main();
+}
+
+
+// Get the resources for the game
+resources.load([
+    'images/background.png',
+    'images/bird-test.png',
+    'images/pipe.png'
+]);
+resources.onReady(init);
+
+
+// Game states
+var chicken = {
+    pos: [0, 0],
+    height: 16,
+	width: 16,
+	color: 'white',
+    is_touching: false,
+    is_grounded: false,
+    is_jumping: false,
+    is_falling: false,
+    is_flapping: false,
+    jump_height: 100,
+    sprite: new Sprite('images/bird-test.png', [0, 0], [16, 16], 16, [0])
+    //sprite: new Sprite('images/bird-test.png', [0, 0], [16, 16], 16, [0, 1], 'horizontal')
+};
 
 var pipes = [];
-var pipeReady = false;
-function Pipe (pX, pY, pW, pH, color, image_url) {
-	//console.log('Pipe function called..');
-	var pipeReady = false;
-	this.color = color;
-	this.width = pW;
-	this.height = pH;
-	this.pX = pX;
-	this.pY = pY;
-	this.is_passed = false;
+var game_time = 0;
+var pipe_interval = 4;
+var is_game_over;
+var is_game_running = false;
+var is_game_reset = false;
+var sky_pattern;
 
-	var that = this;
-
-	this.pipe_image = new Image();
-	this.pipe_image.onload=function() {
-    	try {
-    		pipes.push(that);
-    		//console.log('tester..'+that.pipe_image+that.pX+that.pY);
-        	//ctx.drawImage(that.pipe_image, that.pX, that.pY, that.width, that.height);
-    	} catch(err) {
-        	console.log('Onload: could not draw image '+that.url);
-        	console.log(err);
-    	}
-	};
-	this.pipe_image.src = image_url;
-}
-
-// Restart Button 
-var restart_btn_width = 200;
-var restart_btn_height = 100;
-var restart_btn_position_x = 0;
-var restart_btn_position_y = 0;
-var restart_btn_ready = false;
-var restart_btn = new Image();
-restart_btn.onload = function () {
-	restart_btn_ready = true;
-}
-restart_btn.src = 'images/restart-btn.png';
+// The score
+var score = 0;
+var score_el = document.getElementById('score');
 
 
-// Game objects
 
-var bird = {
-	height: 16,
-	speed: 1.2, // movement in pixels per second
-	jump_height: 56,
-	is_jumping: false,
-	is_touching: false,
-	is_grounded: false,
-	x: canvas.width * 0.25,
-	y: canvas.height - ( canvas.height * 0.45 ),
-};
-var now;
-var then;
-var delta;
+// Speed in pixels per second
+var chicken_speed = 600;
+var pipe_speed = 100;
+
 var gravity = 1.2;
-var jump_int;
-var make_pipe;
-var pipe_width = 100;
-var pipe_height = 200;
-var pipe_int = 4000;
-var pipe_speed = 50;
-var best_score = 0;
-var blocks_cleared = 0;
-var mouse_location = [];
-//Variables for the state/scene of the game
-var scene_game_over = false;
-var scene_game_intro = true;
-var scene_game_running = false;
+var velocity = 1.2;
+var drop_rate = 0.1;
 
 
-// Handle keyboard controls
 
-var keysDown = {};
-var currently_pressed = false;
-var mouse_currently_pressed = false;
+// Update the game objects
+var c = 0;
+function update(dt) {
+	if ( isNaN( dt ) ) { dt = 0; }
+    game_time += dt;
 
-addEventListener( "keydown", function(e) {
-	keysDown[e.keyCode] = true;
-	if ( scene_game_over == true ) { reset_game(); }
-}, false);
+    handle_input(dt);
+    update_entities(dt);
 
-addEventListener( "keyup", function(e) {
-	delete keysDown[e.keyCode];
-	currently_pressed = false;
-}, false);
-
-document.addEventListener("DOMContentLoaded", init, false);
-canvas.addEventListener("mousedown", get_mouse_position, false);
-canvas.addEventListener("mouseup", function(){ mouse_currently_pressed = true; }, false);
-
-function init() {
-    canvas.addEventListener("mousedown", get_mouse_position, false);
-}
-
-function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key))
-            return false;
-    }
-    return true;
-}
-
-function getRandomArbitary (min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-var get_mouse_position = function(event) {
-	var x = new Number();
-    var y = new Number();
-
-    if (event.x != undefined && event.y != undefined) {
-        x = event.x;
-    	y = event.y;
-    }
-    else { // Firefox method to get the position
-    	x = event.clientX + document.body.scrollLeft +
-            document.documentElement.scrollLeft;
-        y = event.clientY + document.body.scrollTop +
-            document.documentElement.scrollTop;
+    // Add pipes at set rate (make if statement for that here)
+    /**
+    **/
+    
+    if ( Math.floor( game_time ) % pipe_interval === 0 && Math.floor( game_time ) > c && is_game_running ) {
+    	//Every given pipe_interval (in secontds), produce a new pipe to travel the screen
+    	c = game_time;
+    	pipes.push({
+    		height: 200, //Make this variable
+            pos: [0,0],
+            sprite: new Sprite('images/pipe.png', [0, 0], [100, 400])
+        });
+        pipes[(pipes.length - 1)].pos = [canvas.width, canvas.height - pipes[(pipes.length - 1)].height];
+        //console.log( pipes.length );
     }
 
-    x -= canvas.offsetLeft;
-    y -= canvas.offsetTop;
 
-    mouse_location = [x, y];
+    check_collisions();
 
-    //console.log(mouse_location[0])
-
-    //Determine if a button is clicked
-    if ( scene_game_over == true ) {
-    	//if mouse coordinates are within range of button display, restart the game
-    	if ( 
-    		mouse_location[0] > restart_btn_position_x 
-    		&& mouse_location[0] < ( restart_btn_position_x + restart_btn_width )
-    		&& mouse_location[1] > restart_btn_position_y
-    		&& mouse_location[1] < ( restart_btn_position_y + restart_btn_height )
-    	) {
-    		reset_game();
-    	} else { console.log('false'); }
-    } 
-}
-
-var get_object_coordinates = function() {
-
-}
-
-// Reset the game when the player clicks play button
-
-var reset_game = function () {
-	console.log('reset game');
-	scene_game_running = false;
-	scene_game_over = false;
-	scene_game_intro = true;
-	blocks_cleared = 0;
-	bird.is_touching = false;
-
-	bird.x = canvas.width * 0.25,
-	bird.y = canvas.height - ( canvas.height * 0.45 );
-
-	game = setInterval(main, 1); // Execute as fast as possible
-	scene_game_running = true;
-
-	pipes = [];
-
-	make_pipes();
-}
-
-var game_over = function() {
-	scene_game_running = false;
-	scene_game_over = true;
-
-	// alert('game over!');
-	console.log('game over..');
-	clearInterval( make_pipe );
-	clearInterval( game );
-
-	// Display the restart button
-	if ( restart_btn_ready ) {
-		console.log( 'draw restart button..' );
-		restart_btn_position_x = ( canvas.width / 2 ) - ( restart_btn_width / 2 );
-		restart_btn_position_y = ( canvas.height / 2 ) - ( restart_btn_height / 2 );
-		ctx.drawImage(restart_btn, restart_btn_position_x, restart_btn_position_y);
-	} 
-
-}
-
-var make_pipes = function() {
-	make_pipe = setInterval(function() {
-		//produce new pipe at a set rate
-		var opening = ( canvas.height ) * .3 ;
-		var random_height = ( canvas.height ) * getRandomArbitary(0.45, 0.85);
-		console.log(random_height);
-
-		var pipe = new Pipe( (canvas.width - 100), ( random_height - ( opening + pipe_height ) ), pipe_width, pipe_height, 'yellow', 'images/pipe.png');
-		var pipe = new Pipe( (canvas.width - 100), random_height, pipe_width, pipe_height, 'yellow', 'images/pipe.png');
-	}, pipe_int);
-}
-
-
-// Update game objects
-var animate_bird = function( modifier ) {
-	// Start the bird jump animation
-
-	var top_of_jump = bird.jump_height;
-	top_of_jump = bird.y - bird.jump_height;
-	if ( top_of_jump < 0 ) { top_of_jump = 0 };
-
-	//console.log('animating..'+bird.y+' '+top_of_jump);
-
-	clearInterval(jump_int);
-
-	var i = ( gravity * 10 );
-	jump_int = setInterval(function() { 
-		//console.log(modifier+' '+ modifier * 10);
-		bird.is_jumping == true;
-		bird.y -= ( bird.speed * i );
-		if ( bird.y <= 0 ) { bird.y = 0; };
-		i = i-gravity;
-	}, 30);
-
-	//bird.is_jumping == false;
-	//console.log('bird stopped jumping..'+bird.y+' '+bird.jump_height);
-}
-
-var update = function ( modifier ) {
-	if ( isEmpty(keysDown) == false && currently_pressed == false || mouse_currently_pressed == true ) { // Player just pressed spacebar
-		mouse_currently_pressed = false;
-		currently_pressed = true;
-		animate_bird(modifier);
-	} 
-
-	// Update position of Pipes
-
-	if ( pipes.length > 0 ) {
-		var p = 0;
-		while ( p < pipes.length ) {
-			//console.log(pipes[p]);
-			pipes[p].pX -= pipe_speed * modifier;
-
-			// Did the chicken pass a pipe?
-			if ( bird.x > ( pipes[p].pX + pipes[p].width ) && pipes[p].is_passed == false ) {
-				//The pipe has just been cleared, add 1 to score
-				pipes[p].is_passed = true;
-				blocks_cleared+=0.5;
-			}
-
-			// Are they touching?
-			if ( bird.x > ( pipes[p].pX )
-				 && bird.x < ( pipes[p].pX + pipes[p].width )
-				 && bird.y > ( pipes[p].pY )
-				 && bird.y < ( pipes[p].pY + pipes[p].height ) ) {
-				//bird is touching, kill the game
-				bird.is_touching = true;
-			} 
-
-			// If pipe has been passed & moved off screen right
-			// It's useless to keep rendering it, so remove that
-			if ( pipes[p].pX <= ( 0 - pipes[p].width ) ) {
-				pipes.splice( p, 1 );
-			}
-
-			p++;
-		}
-	}
-
-
+    score_el.innerHTML = score;
 };
+
+
+
+// Handle the player input
+//var currently_pressed = false;
+var currently_pressed = false;
+function handle_input(dt) {
+
+    if(input.isDown('*') &&
+       !is_game_over &&
+       currently_pressed == false ) {
+    	//console.log('some button pressed..');
+    	if (is_game_reset) { is_game_reset = false; is_game_running = true; chicken.is_flapping = true; chicken.sprite = new Sprite('images/bird-test.png', [0, 0], [16, 16], 16, [0, 1], 'horizontal'); }
+    	currently_pressed = true;
+    	// Trigger jump animation
+    	if ( chicken.is_jumping == true ) {
+    		//chicken.is_jumping = false;
+    		velocity = gravity;
+    	} else { chicken.is_jumping = true; }
+    } else if ( !input.isDown('*') &&
+       !is_game_over) {
+    	//console.log('nothing pressed..');
+    	currently_pressed = false;
+    }
+}
+
+
+var chicken_initial_height;
+var counter;
+function update_entities( dt ) {
+    // Update the chicken sprite animation
+    if ( isNaN(dt) ) { dt = 0; }
+    if ( chicken.is_jumping == true && is_game_running ) {
+    	//alert('chicken jumping!');
+    	chicken.pos[1] -= ( chicken_speed * velocity ) * dt;
+    	velocity -= drop_rate;
+    }
+
+   	chicken.sprite.update( dt );
+
+    // Update all the pipes
+    for(var i=0; i<pipes.length; i++) {
+        pipes[i].pos[0] -= pipe_speed * dt;
+        pipes[i].sprite.update(dt);
+
+        // Remove if offscreen
+        if(pipes[i].pos[0] + pipes[i].sprite.size[0] < 0) {
+            pipes.splice(i, 1);
+            i--;
+        }
+    }
+
+}
+
+
+
+// Collisions
+
+function collides(x, y, r, b, x2, y2, r2, b2) {
+    return !(r <= x2 || x > r2 ||
+             b <= y2 || y > b2);
+}
+
+function box_collides(pos, size, pos2, size2) {
+    return collides(pos[0], pos[1],
+                    pos[0] + size[0], pos[1] + size[1],
+                    pos2[0], pos2[1],
+                    pos2[0] + size2[0], pos2[1] + size2[1]);
+}
+
+function check_collisions() {
+    check_chicken_bounds();
+
+    // Run collision detection for all pipes
+    for(var i=0; i<pipes.length; i++) {
+        var pos = pipes[i].pos;
+        var size = pipes[i].sprite.size;
+
+        if(box_collides(pos, size, chicken.pos, chicken.sprite.size)) {
+            //game_over();
+            is_game_over = true;
+        }
+    }
+}
+
+function check_chicken_bounds() {
+    // Check bounds
+    if(chicken.pos[0] < 0) {
+        chicken.pos[0] = 0;
+    }
+    else if(chicken.pos[0] > canvas.width - chicken.sprite.size[0]) {
+        chicken.pos[0] = canvas.width - chicken.sprite.size[0];
+    }
+
+    if(chicken.pos[1] < 0) {
+        chicken.pos[1] = 0;
+    }
+    else if(chicken.pos[1] > canvas.height - chicken.sprite.size[1]) {
+        chicken.pos[1] = canvas.height - chicken.sprite.size[1];
+        //game_over();
+        is_game_over = true;
+    }
+}
+
 
 
 // Draw everything
-var render = function () {
-	if ( bgReady ) {
-		ctx.drawImage(bgImage, 0, 0);
-	}
+function render() {
 
-	//Pipes
+    // Render stuff if the game isn't over
+    if(is_game_running || is_game_reset) {
+    	ctx.fillStyle = sky_pattern;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-	if ( pipes.length > 0 ) {
-		var p = 0;
-		while ( p < pipes.length ) {
-			//console.log(pipes[p]);
-			ctx.drawImage(pipes[p].pipe_image, pipes[p].pX, pipes[p].pY, pipes[p].width, pipes[p].height);
-			p++;
-		}
-	}
+        render_entity( chicken );
+        render_entities( pipes );
+    } 
+    
+    if ( is_game_over ) { game_over(); }
+};
 
-	if ( birdReady ) {
-		if ( bird.y >= ( canvas.height - bird.height )  ) { 
-			clearInterval(jump_int);
-			bird.y = canvas.height - bird.height; 
-			bird.is_grounded = true;
-			ctx.drawImage( birdImage, bird.x, bird.y );
-			game_over();
-		} else if ( bird.is_touching == true ) {
-			ctx.drawImage( birdImage, bird.x, bird.y );
-			game_over();
-		} else { 
-			bird.is_grounded = false; 
-			ctx.drawImage( birdImage, bird.x, bird.y );
-		}
-	}
+function render_entities( list ) {
+    for(var i=0; i<list.length; i++) {
+    	//console.log( list[i].pos[0] );
+        render_entity(list[i]);
+    }    
+}
 
-	// Score
-	ctx.fillStyle = "rgb(250,250,250)";
-	ctx.font = "24px monospace";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText( Math.floor(blocks_cleared), 32, 32);
+function render_entity( entity ) {
+    ctx.save();
+    ctx.translate(entity.pos[0], entity.pos[1]);
+    entity.sprite.render(ctx);
+    ctx.restore();
 }
 
 
-// The main game loop
-var main = function () {
-	now = Date.now();
-	delta = now - then;
 
-	update(delta /1000);
-	render();
-
-	then = now;
+// Game over
+function game_over() {
+    document.getElementById('game-over').style.display = 'block';
+    document.getElementById('game-over-overlay').style.display = 'block';
+    is_game_running = false;
+    is_game_over = true;
+    //alert(chicken.pos);
 }
 
 
-// Let's play this game!
-reset_game();
-var then = Date.now();
 
+// Reset game to original state
+function reset() {
+    document.getElementById('game-over').style.display = 'none';
+    document.getElementById('game-over-overlay').style.display = 'none';
+    is_game_reset = true;
+    is_game_over = false;
+    gameTime = 0;
+    score = 0;
 
+    pipes = [];
 
+    var gravity = 1.2;
+	var velocity = 1.2;
+	var drop_rate = 0.1;
+
+	chicken.is_flapping = false; 
+	chicken.sprite = new Sprite('images/bird-test.png', [0, 0], [16, 16], 16, [0]);
+    chicken.pos = [50, canvas.height / 2];
+    //alert(chicken.pos);
+};
