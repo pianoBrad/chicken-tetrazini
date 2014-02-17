@@ -11,6 +11,10 @@ var requestAnimFrame = (function(){
         };
 })();
 
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
+
 // Function to get a random number between a given range
 function getRandomArbitary (min, max) {
     return Math.random() * (max - min) + min;
