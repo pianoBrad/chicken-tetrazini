@@ -57,7 +57,8 @@ function init() {
 resources.load([
     'images/background.png',
     'images/chicken-sprite-sheet-72px.png',
-    'images/pipe.png'
+    'images/pipe.png',
+    'images/clouds-foreground.png'
 ]);
 resources.onReady(init);
 
@@ -90,6 +91,22 @@ var is_game_over;
 var is_game_running = false;
 var is_game_reset = false;
 var sky_pattern;
+
+// Background/Foreground elements
+var foreground_clouds_width = 960;
+var foreground_clouds_height = 69;
+var foreground_clouds_tile_1 = {
+	pos: [0, 0],
+	width: foreground_clouds_width,
+	height: foreground_clouds_height,
+	sprite: new Sprite('images/clouds-foreground.png', [0, 0], [ foreground_clouds_width, foreground_clouds_height ])
+}
+var foreground_clouds_tile_2 = {
+	pos: [0, 0],
+	width: foreground_clouds_width,
+	height: foreground_clouds_height,
+	sprite: new Sprite('images/clouds-foreground.png', [0, 0], [ foreground_clouds_width, foreground_clouds_height ])
+}
 
 // The score
 var score = 0;
@@ -203,6 +220,17 @@ function update_entities( dt ) {
         }
     }
 
+    // Update the clouds
+    var foreground_clouds_speed = 2;
+
+    if ( foreground_clouds_tile_1.pos[0] <= (0 - foreground_clouds_width) ) {
+    	foreground_clouds_tile_1.pos[0] = foreground_clouds_width;
+    } else if ( foreground_clouds_tile_2.pos[0] <= (0 - foreground_clouds_width) ) {
+    	foreground_clouds_tile_2.pos[0] = foreground_clouds_width;
+    }
+
+    foreground_clouds_tile_1.pos[0] -= foreground_clouds_speed;
+    foreground_clouds_tile_2.pos[0] -= foreground_clouds_speed;
 }
 
 
@@ -265,8 +293,13 @@ function render() {
     	ctx.fillStyle = sky_pattern;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        // Render blocks and chicken
         render_entities( pipes );
     	render_entity( chicken );
+
+    	// Render foreground clouds
+    	render_entity( foreground_clouds_tile_1 );
+    	render_entity( foreground_clouds_tile_2 );
     } 
 
     if ( is_game_over ) { game_over(); }
@@ -318,4 +351,8 @@ function reset() {
 	chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [0]);
     chicken.pos = [50, canvas.height / 2];
     //alert(chicken.pos);
+
+    foreground_clouds_tile_1.pos = [0, (canvas.height - foreground_clouds_height)];
+    foreground_clouds_tile_2.pos = [foreground_clouds_width, (canvas.height - foreground_clouds_height)];
+    console.log( foreground_clouds_tile_1.pos+' '+foreground_clouds_tile_2.pos );
 };
