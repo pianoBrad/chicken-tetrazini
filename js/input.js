@@ -34,21 +34,23 @@
     document.addEventListener('keyup', function(e) {
         setKey(e, false);
     });
-
-    
+  
     document.addEventListener('mousedown', function(e) {
         setKey(e, true);
     });
-    /**
+
 
     document.addEventListener('mouseup', function(e) {
         setKey(e, false);
-    });
-    **/ 
+    }); 
+
+    document.addEventListener('touchstart', function(e) {
+        setKey(e, true);
+    }); 
     
-    document.addEventListener('click', function(e) {
+    document.addEventListener('touchend', function(e) {
         setKey(e, false);
-    });
+    }); 
 
     window.addEventListener('blur', function() {
         pressedKeys = {};
