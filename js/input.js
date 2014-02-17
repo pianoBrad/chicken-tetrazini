@@ -35,13 +35,20 @@
         setKey(e, false);
     });
 
+    
     document.addEventListener('mousedown', function(e) {
         setKey(e, true);
     });
+    /**
 
     document.addEventListener('mouseup', function(e) {
         setKey(e, false);
-    });   
+    });
+    **/ 
+    
+    document.addEventListener('click', function(e) {
+        setKey(e, false);
+    });
 
     window.addEventListener('blur', function() {
         pressedKeys = {};
