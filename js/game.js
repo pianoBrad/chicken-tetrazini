@@ -59,6 +59,7 @@ resources.load([
     'images/chicken-sprite-sheet-72px.png',
     'images/pipe.png',
     'images/fork.png',
+    'images/steam.png',
     'images/flame-foreground-70px.png',
     'images/flame-background-1-70px.png'
 ]);
@@ -128,6 +129,11 @@ for ( f = 0; f < (canvas.width + flame_front_width); f+=flame_front_width) {
     flames_front[num_flame].pos = [f, ( canvas.height - ( canvas.height / 8) )];
     num_flame++;
 }
+
+var steam = {
+	pos: [0, 0],
+	sprite: new Sprite('images/steam.png', [0, 0], [canvas.width, canvas.height])	
+};
 
 // The score
 var score = 0;
@@ -245,32 +251,33 @@ function update_entities( dt ) {
     // Update the flames
     var flame_front_speed = 2.5;
     var flame_back_speed = 0.5;
-    for ( var f = 0; f < flames_front.length; f++) {
-    	
-    	if( flames_front[f].pos[0] <= ( 0 - flame_front_width ) ) {
-    		if ( f != 0 ) {
-    			flames_front[f].pos[0] = (flames_front[(f - 1)].pos[0] + flame_front_width);
-    		} else {
-    			flames_front[f].pos[0] = (flames_front[(flames_front.length - 1)].pos[0] + flame_front_width);
+    if ( is_game_running && chicken.is_flapping ) {
+    	for ( var f = 0; f < flames_front.length; f++) {
+    		if( flames_front[f].pos[0] <= ( 0 - flame_front_width ) ) {
+    			if ( f != 0 ) {
+    				flames_front[f].pos[0] = (flames_front[(f - 1)].pos[0] + flame_front_width);
+    			} else {
+    				flames_front[f].pos[0] = (flames_front[(flames_front.length - 1)].pos[0] + flame_front_width);
+    			}
+
     		}
-
-    	}
     	
-    	flames_front[f].pos[0] -= flame_front_speed;
-    }
+    		flames_front[f].pos[0] -= flame_front_speed;
+    	}
 
-    for ( var f = 0; f < flames_back.length; f++) {
-    	if( flames_back[f].pos[0] <= ( 0 - flame_back_width ) ) {
-    		if ( f != 0 ) {
-    			flames_back[f].pos[0] = (flames_back[(f - 1)].pos[0] + flame_back_width);
-    		} else {
-    			flames_back[f].pos[0] = (flames_back[(flames_back.length - 1)].pos[0] + flame_back_width);
+    	for ( var f = 0; f < flames_back.length; f++) {
+    		if( flames_back[f].pos[0] <= ( 0 - flame_back_width ) ) {
+    			if ( f != 0 ) {
+    				flames_back[f].pos[0] = (flames_back[(f - 1)].pos[0] + flame_back_width);
+    			} else {
+    				flames_back[f].pos[0] = (flames_back[(flames_back.length - 1)].pos[0] + flame_back_width);
+    			}
+
     		}
-
-    	}
     	
-    	flames_back[f].pos[0] -= flame_back_speed;
-    }
+    		flames_back[f].pos[0] -= flame_back_speed;
+    	}
+    } 
 }
 
 
@@ -334,6 +341,8 @@ function render() {
     	ctx.fillStyle = sky_pattern;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        render_entity( steam );
+
         render_entities( flames_back );
 
         // Render blocks and chicken
@@ -380,7 +389,7 @@ function reset() {
     document.getElementById('game-over-overlay').style.display = 'none';
     is_game_reset = true;
     is_game_over = false;
-    gameTime = 0;
+    game_time = 0;
     score = 0;
 
     forks = [];
@@ -388,6 +397,7 @@ function reset() {
     var gravity = 1.2;
 	var velocity = 1.2;
 	var drop_rate = 0.1;
+	c = 0;
 
 	chicken.is_flapping = false; 
 	chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [0]);
