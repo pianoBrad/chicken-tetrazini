@@ -21,7 +21,10 @@ var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 320;//512;
 canvas.height = 568;//480;
-document.body.appendChild(canvas);
+// Set styles of hud elements, based on canvas size
+//document.getElementById('score').style.width=canvas.width+"px";
+document.getElementById('score').style.margin=(canvas.height/20)+"px 0px";
+document.getElementById('game').appendChild(canvas);
 
 
 
@@ -57,7 +60,6 @@ function init() {
 resources.load([
     'images/background-tile-54px.png',
     'images/chicken-sprite-sheet-72px.png',
-    'images/pipe.png',
     'images/fork.png',
     'images/steam.png',
     'images/flame-foreground-70px.png',
@@ -162,8 +164,6 @@ function update(dt) {
     update_entities(dt);
 
     // Add forks at set rate (make if statement for that here)
-    /**
-    **/
     
     if ( Math.floor( game_time ) % fork_interval === 0 && Math.floor( game_time ) > c && is_game_running ) {
     	//Every given fork_interval (in secontds), produce a new fork to travel the screen
@@ -174,14 +174,16 @@ function update(dt) {
 
     	//Make 1st fork
     	forks.push({
+            is_passed: false,
     		height: random_height, //Make this variable
             pos: [0,0],
             sprite: new Sprite('images/fork.png', [0, 0], [fork_width, fork_height])
         });
         forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height];
         
-        //Make 2nd pipe
+        //Make 2nd fork
         forks.push({
+            is_passed: false,
     		height: random_height, //Make this variable
             pos: [0,0],
             sprite: new Sprite('images/fork.png', [0, 0], [fork_width, fork_height])
@@ -193,7 +195,7 @@ function update(dt) {
 
     check_collisions();
 
-    score_el.innerHTML = score;
+    score_el.innerHTML = Math.round( score );
 };
 
 
@@ -304,14 +306,18 @@ function check_collisions() {
         var pos = forks[i].pos;
         var size = forks[i].sprite.size;
 
-        if ( forks[i].pos[0] <= ( chicken.pos[0] + chicken_width ) && forks[i].pos[0] >= chicken.pos[0] ) {
-        	console.log('checking collisions now..');
+        if ( forks[i].pos[0] <= ( chicken.pos[0] + chicken_width ) && forks[i].is_passed == false ) {
+        	//alert('check collisions now!');
+            console.log('checking collisions now..');
         	if(box_collides(pos, size, chicken.pos, chicken.sprite.size)) {
             	//game_over();
             	is_game_over = true;
-        	}
-        }
-    }
+        	} else if ( ( forks[i].pos[0] + fork_width ) < chicken.pos[0] && forks[i].is_passed == false ) {
+                forks[i].is_passed = true;
+                score += 0.5;
+            }
+        } 
+    } 
 }
 
 function check_chicken_bounds() {

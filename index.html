@@ -7,26 +7,30 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/theme.css">
   </head>
   <body>
     <div id="game-over-overlay">
     </div>
 
     <div id="game-over">
-      <h1>GAME OVER</h1>
+      <h1>You're Fried!</h1>
       <button id="play-again">Play Again</button>
     </div>
 
-    <div class="wrapper">
-      <div id="instructions">
+    <div class="wrapper game-states">
+
+      <div class="game-running">
+        <div id="score" class="shadow"></div>
+      </div>
+    </div>
+
+    <div id="game"></div>
+    <div id="instructions">
         <div>
           touch, click, or press any key to begin
         </div>
       </div>
-
-      <div id="score"></div>
-    </div>
 
     <script type="text/javascript" src="js/resources.js"></script>
     <script type="text/javascript" src="js/input.js"></script>
