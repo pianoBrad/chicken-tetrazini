@@ -11,10 +11,6 @@ var requestAnimFrame = (function(){
         };
 })();
 
-window.addEventListener('load', function() {
-    FastClick.attach(document.body);
-}, false);
-
 // Function to get a random number between a given range
 function getRandomArbitary (min, max) {
     return Math.random() * (max - min) + min;
@@ -45,7 +41,7 @@ function main() {
 // Once images have loaded, time to start the game
 function init() {
 	//console.log('all resources loaded..');
-    sky_pattern = ctx.createPattern(resources.get('images/background.png'), 'repeat');
+    sky_pattern = ctx.createPattern(resources.get('images/background-tile-54px.png'), 'repeat');
 
     document.getElementById('play-again').addEventListener('click', function() {
         reset();
@@ -59,10 +55,12 @@ function init() {
 
 // Get the resources for the game
 resources.load([
-    'images/background.png',
+    'images/background-tile-54px.png',
     'images/chicken-sprite-sheet-72px.png',
     'images/pipe.png',
-    'images/clouds-foreground.png'
+    'images/fork.png',
+    'images/flame-foreground-70px.png',
+    'images/flame-background-1-70px.png'
 ]);
 resources.onReady(init);
 
@@ -86,30 +84,49 @@ var chicken = {
     //sprite: new Sprite('images/chicken-sprite-sheet.png', [0, 0], [16, 16], 16, [0, 1], 'horizontal')
 };
 
+/**
 var pipes = [];
 var pipe_width = 84;
 var pipe_height = 319;
+**/
+var forks = [];
+var fork_width = 53;
+var fork_height= 633;
+var flames_front = [];
+var flames_back = [];
+var flame_front_width = 70;
+var flame_front_height = 140;
+var flame_back_width = 70;
+var flame_back_height = 140;
 var game_time = 0;
-var pipe_interval = 3;
+//var pipe_interval = 3;
+var fork_interval = 3;
 var is_game_over;
 var is_game_running = false;
 var is_game_reset = false;
 var sky_pattern;
 
 // Background/Foreground elements
-var foreground_clouds_width = 960;
-var foreground_clouds_height = 69;
-var foreground_clouds_tile_1 = {
-	pos: [0, 0],
-	width: foreground_clouds_width,
-	height: foreground_clouds_height,
-	sprite: new Sprite('images/clouds-foreground.png', [0, 0], [ foreground_clouds_width, foreground_clouds_height ])
-}
-var foreground_clouds_tile_2 = {
-	pos: [0, 0],
-	width: foreground_clouds_width,
-	height: foreground_clouds_height,
-	sprite: new Sprite('images/clouds-foreground.png', [0, 0], [ foreground_clouds_width, foreground_clouds_height ])
+var num_flame = 0;
+for ( f = 0; f < (canvas.width + flame_front_width); f+=flame_front_width) {
+	//Make flame
+   	flames_front.push({
+   		width: flame_front_width,
+    	height: flame_front_height, //Make this variable
+        pos: [0,0],
+        sprite: new Sprite('images/flame-foreground-70px.png', [0, 0], [flame_front_width, flame_front_height])
+    });
+    //Make background flame
+   	flames_back.push({
+   		width: flame_back_width,
+    	height: flame_back_height, //Make this variable
+        pos: [0,0],
+        sprite: new Sprite('images/flame-background-1-70px.png', [0, 0], [flame_back_width, flame_back_height])
+    });
+
+    flames_back[num_flame].pos = [f, ( canvas.height - ( canvas.height / 5) )];
+    flames_front[num_flame].pos = [f, ( canvas.height - ( canvas.height / 8) )];
+    num_flame++;
 }
 
 // The score
@@ -120,7 +137,8 @@ var score_el = document.getElementById('score');
 
 // Speed in pixels per second
 var chicken_speed = 450;
-var pipe_speed = 100;
+//var pipe_speed = 100;
+var fork_speed = 100;
 
 var gravity = 1.2;
 var velocity = 1.2;
@@ -137,32 +155,32 @@ function update(dt) {
     handle_input(dt);
     update_entities(dt);
 
-    // Add pipes at set rate (make if statement for that here)
+    // Add forks at set rate (make if statement for that here)
     /**
     **/
     
-    if ( Math.floor( game_time ) % pipe_interval === 0 && Math.floor( game_time ) > c && is_game_running ) {
-    	//Every given pipe_interval (in secontds), produce a new pipe to travel the screen
+    if ( Math.floor( game_time ) % fork_interval === 0 && Math.floor( game_time ) > c && is_game_running ) {
+    	//Every given fork_interval (in secontds), produce a new fork to travel the screen
     	c = game_time;
 
     	var opening = ( canvas.height ) * .3 ;
 		var random_height = ( canvas.height ) * getRandomArbitary(0.45, 0.85);
 
-    	//Make 1st pipe
-    	pipes.push({
+    	//Make 1st fork
+    	forks.push({
     		height: random_height, //Make this variable
             pos: [0,0],
-            sprite: new Sprite('images/pipe.png', [0, 0], [pipe_width, pipe_height])
+            sprite: new Sprite('images/fork.png', [0, 0], [fork_width, fork_height])
         });
-        pipes[(pipes.length - 1)].pos = [canvas.width, pipes[(pipes.length - 1)].height];
+        forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height];
         
         //Make 2nd pipe
-        pipes.push({
+        forks.push({
     		height: random_height, //Make this variable
             pos: [0,0],
-            sprite: new Sprite('images/pipe.png', [0, 0], [pipe_width, pipe_height])
+            sprite: new Sprite('images/fork.png', [0, 0], [fork_width, fork_height])
         });
-        pipes[(pipes.length - 1)].pos = [canvas.width, pipes[(pipes.length - 1)].height - ( opening + pipe_height ) ];
+        forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height - ( opening + fork_height ) ];
 
     }
 
@@ -212,29 +230,47 @@ function update_entities( dt ) {
 
    	chicken.sprite.update( dt );
 
-    // Update all the pipes
-    for(var i=0; i<pipes.length; i++) {
-        pipes[i].pos[0] -= pipe_speed * dt;
-        pipes[i].sprite.update(dt);
+    // Update all the forks
+    for(var i=0; i<forks.length; i++) {
+        forks[i].pos[0] -= fork_speed * dt;
+        forks[i].sprite.update(dt);
 
         // Remove if offscreen
-        if(pipes[i].pos[0] + pipes[i].sprite.size[0] < 0) {
-            pipes.splice(i, 1);
+        if(forks[i].pos[0] + forks[i].sprite.size[0] < 0) {
+            forks.splice(i, 1);
             i--;
         }
     }
 
-    // Update the clouds
-    var foreground_clouds_speed = 2;
+    // Update the flames
+    var flame_front_speed = 2.5;
+    var flame_back_speed = 0.5;
+    for ( var f = 0; f < flames_front.length; f++) {
+    	
+    	if( flames_front[f].pos[0] <= ( 0 - flame_front_width ) ) {
+    		if ( f != 0 ) {
+    			flames_front[f].pos[0] = (flames_front[(f - 1)].pos[0] + flame_front_width);
+    		} else {
+    			flames_front[f].pos[0] = (flames_front[(flames_front.length - 1)].pos[0] + flame_front_width);
+    		}
 
-    if ( foreground_clouds_tile_1.pos[0] <= (0 - foreground_clouds_width) ) {
-    	foreground_clouds_tile_1.pos[0] = foreground_clouds_width;
-    } else if ( foreground_clouds_tile_2.pos[0] <= (0 - foreground_clouds_width) ) {
-    	foreground_clouds_tile_2.pos[0] = foreground_clouds_width;
+    	}
+    	
+    	flames_front[f].pos[0] -= flame_front_speed;
     }
 
-    foreground_clouds_tile_1.pos[0] -= foreground_clouds_speed;
-    foreground_clouds_tile_2.pos[0] -= foreground_clouds_speed;
+    for ( var f = 0; f < flames_back.length; f++) {
+    	if( flames_back[f].pos[0] <= ( 0 - flame_back_width ) ) {
+    		if ( f != 0 ) {
+    			flames_back[f].pos[0] = (flames_back[(f - 1)].pos[0] + flame_back_width);
+    		} else {
+    			flames_back[f].pos[0] = (flames_back[(flames_back.length - 1)].pos[0] + flame_back_width);
+    		}
+
+    	}
+    	
+    	flames_back[f].pos[0] -= flame_back_speed;
+    }
 }
 
 
@@ -256,10 +292,10 @@ function box_collides(pos, size, pos2, size2) {
 function check_collisions() {
     check_chicken_bounds();
 
-    // Run collision detection for all pipes
-    for(var i=0; i<pipes.length; i++) {
-        var pos = pipes[i].pos;
-        var size = pipes[i].sprite.size;
+    // Run collision detection for all forks
+    for(var i=0; i<forks.length; i++) {
+        var pos = forks[i].pos;
+        var size = forks[i].sprite.size;
 
         if(box_collides(pos, size, chicken.pos, chicken.sprite.size)) {
             //game_over();
@@ -294,16 +330,18 @@ function render() {
 
     // Render stuff if the game isn't over
     if(is_game_running || is_game_reset) {
+    	// Render background elements
     	ctx.fillStyle = sky_pattern;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        render_entities( flames_back );
+
         // Render blocks and chicken
-        render_entities( pipes );
+        render_entities( forks );
     	render_entity( chicken );
 
-    	// Render foreground clouds
-    	render_entity( foreground_clouds_tile_1 );
-    	render_entity( foreground_clouds_tile_2 );
+    	// Render foreground flames
+    	render_entities( flames_front );
     } 
 
     if ( is_game_over ) { game_over(); }
@@ -345,7 +383,7 @@ function reset() {
     gameTime = 0;
     score = 0;
 
-    pipes = [];
+    forks = [];
 
     var gravity = 1.2;
 	var velocity = 1.2;
@@ -356,7 +394,5 @@ function reset() {
     chicken.pos = [50, canvas.height / 2];
     //alert(chicken.pos);
 
-    foreground_clouds_tile_1.pos = [0, (canvas.height - foreground_clouds_height)];
-    foreground_clouds_tile_2.pos = [foreground_clouds_width, (canvas.height - foreground_clouds_height)];
-    console.log( foreground_clouds_tile_1.pos+' '+foreground_clouds_tile_2.pos );
+    //reset the flames to original positions
 };
