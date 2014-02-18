@@ -299,14 +299,17 @@ function box_collides(pos, size, pos2, size2) {
 function check_collisions() {
     check_chicken_bounds();
 
-    // Run collision detection for all forks
+    // Run collision detection for all forks, if they're in same x range as chicken
     for(var i=0; i<forks.length; i++) {
         var pos = forks[i].pos;
         var size = forks[i].sprite.size;
 
-        if(box_collides(pos, size, chicken.pos, chicken.sprite.size)) {
-            //game_over();
-            is_game_over = true;
+        if ( forks[i].pos[0] <= ( chicken.pos[0] + chicken_width ) && forks[i].pos[0] >= chicken.pos[0] ) {
+        	console.log('checking collisions now..');
+        	if(box_collides(pos, size, chicken.pos, chicken.sprite.size)) {
+            	//game_over();
+            	is_game_over = true;
+        	}
         }
     }
 }
