@@ -1,6 +1,6 @@
 
 (function() {
-    function Sprite(url, pos, size, speed, frames, dir, once) {
+    function Sprite(url, pos, size, speed, frames, dir, resize, once) {
         this.pos = pos;
         this.size = size;
         this.speed = typeof speed === 'number' ? speed : 0;
@@ -9,7 +9,7 @@
         this.url = url;
         this.dir = dir || 'horizontal';
         this.once = once;
-
+        this.resize = resize || [1,1];
     };
 
     Sprite.prototype = {
@@ -52,6 +52,7 @@
             }
 
             //console.log('drawing image now..'+resources.get(this.url)+' '+frame+' '+x+' '+y);
+            ctx.scale(this.resize[0],this.resize[1]);
             ctx.drawImage(resources.get(this.url),
                           x, y,
                           this.size[0], this.size[1],
