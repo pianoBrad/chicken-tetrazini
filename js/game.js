@@ -22,8 +22,8 @@ var ctx = canvas.getContext("2d");
 canvas.width = 320;//512;
 canvas.height = 568;//480;
 // Set styles of hud elements, based on canvas size
-//document.getElementById('score').style.width=canvas.width+"px";
-document.getElementById('score').style.margin=(canvas.height/20)+"px 0px";
+// document.getElementById('score').style.width=canvas.width+"px";
+// document.getElementById('score').style.margin=(canvas.height/20)+"px 0px";
 document.getElementById('game').appendChild(canvas);
 
 
@@ -141,8 +141,8 @@ var steam = {
 
 // The score
 var score = 0;
-var score_el = document.getElementById('score');
-
+//var score_el = document.getElementById('score');
+var score_el = document.getElementsByClassName('score');
 
 
 // Speed in pixels per second
@@ -197,7 +197,9 @@ function update(dt) {
 
     check_collisions();
 
-    score_el.innerHTML = Math.round( score );
+    for ( s = 0; s < score_el.length; s++ ) {
+        score_el[s].innerHTML = Math.round( score );
+    }
 };
 
 
@@ -387,6 +389,8 @@ function render_entity( entity ) {
 function game_over() {
     document.getElementById('game-over').style.display = 'block';
     document.getElementById('game-over-overlay').style.display = 'block';
+    document.getElementById('score').style.display = 'none';
+    document.getElementById('final-score').style.display = 'block';
     is_game_running = false;
     is_game_over = true;
     //alert(chicken.pos);
@@ -398,6 +402,7 @@ function game_over() {
 function reset() {
     document.getElementById('game-over').style.display = 'none';
     document.getElementById('game-over-overlay').style.display = 'none';
+    document.getElementById('score').style.display = 'block';
     is_game_reset = true;
     is_game_over = false;
     game_time = 0;
