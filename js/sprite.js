@@ -32,7 +32,9 @@
 
                 if(this.once && idx >= max) {
                     this.done = true;
-                    return;
+                    //alert('done');
+                    //console.log(this.done);
+                    return this.done;
                 }
             }
             else {
@@ -58,7 +60,7 @@
                           this.size[0], this.size[1],
                           0, 0,
                           this.size[0], this.size[1]);
-            
+          
         }
     };
 

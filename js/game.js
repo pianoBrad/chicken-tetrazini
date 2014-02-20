@@ -60,6 +60,7 @@ function init() {
 resources.load([
     'images/background-tile-54px.png',
     'images/chicken-sprite-sheet-72px.png',
+    'images/chicken-dead-sprite-sheet-63px.png',
     'images/fork.png',
     'images/steam.png',
     'images/flame-foreground-70px.png',
@@ -71,9 +72,12 @@ resources.onReady(init);
 // Game states
 var chicken_width = 72;
 var chicken_height = 49;
+var chicken_dead_width = 72;
+var chicken_dead_height = 63;
 var chicken_scale_x = 1;
 var chicken_scale_y = 1;
 var chicken_url = 'images/chicken-sprite-sheet-72px.png';
+var chicken_dead_url = 'images/chicken-dead-sprite-sheet-63px.png';
 var chicken = {
     pos: [0, 0],
     height: chicken_height,//24,
@@ -84,6 +88,7 @@ var chicken = {
     is_jumping: false,
     is_falling: false,
     is_flapping: false,
+    is_dead: false,
     jump_height: 100,
     sprite: new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [0])
     //sprite: new Sprite('images/chicken-sprite-sheet.png', [0, 0], [16, 16], 16, [0, 1], 'horizontal')
@@ -232,6 +237,16 @@ function handle_input(dt) {
 var chicken_initial_height;
 var counter;
 function update_entities( dt ) {
+    if ( is_game_running && chicken.is_flapping ) {
+        var flame_front_speed = 2.5;
+        var flame_back_speed = 0.5;
+        var fork_speed = 100;
+    } else if ( is_game_over ) {
+        var flame_front_speed = 0;
+        var flame_back_speed = 0;
+        var fork_speed = 0;
+    }
+
     // Update the chicken sprite animation
     if ( isNaN(dt) ) { dt = 0; }
     if ( chicken.is_jumping == true && is_game_running ) {
@@ -239,6 +254,11 @@ function update_entities( dt ) {
     	chicken.pos[1] -= ( chicken_speed * velocity ) * dt;
     	velocity -= 0.075;
     }
+    
+    if ( chicken.is_dead == true && chicken.is_falling == true ) {
+        chicken.pos[1] += 3;
+    }
+    
 
    	chicken.sprite.update( dt );
 
@@ -255,8 +275,7 @@ function update_entities( dt ) {
     }
 
     // Update the flames
-    var flame_front_speed = 2.5;
-    var flame_back_speed = 0.5;
+
     if ( is_game_running && chicken.is_flapping ) {
     	for ( var f = 0; f < flames_front.length; f++) {
     		if( flames_front[f].pos[0] <= ( 0 - flame_front_width ) ) {
@@ -267,7 +286,6 @@ function update_entities( dt ) {
     			}
 
     		}
-    	
     		flames_front[f].pos[0] -= flame_front_speed;
     	}
 
@@ -282,7 +300,7 @@ function update_entities( dt ) {
     		}
     	
     		flames_back[f].pos[0] -= flame_back_speed;
-    	}
+    	} 
     } 
 }
 
@@ -312,7 +330,7 @@ function check_collisions() {
 
         if ( forks[i].pos[0] <= ( chicken.pos[0] + chicken_width ) && forks[i].is_passed == false ) {
         	//alert('check collisions now!');
-            console.log('checking collisions now..');
+            //console.log('checking collisions now..');
         	if(box_collides(pos, size, chicken.pos, chicken.sprite.size)) {
             	//game_over();
             	is_game_over = true;
@@ -326,20 +344,22 @@ function check_collisions() {
 
 function check_chicken_bounds() {
     // Check bounds
-    if(chicken.pos[0] < 0) {
+    if( is_game_running && chicken.pos[0] < 0) {
         chicken.pos[0] = 0;
     }
-    else if(chicken.pos[0] > canvas.width - chicken.sprite.size[0]) {
+    else if( is_game_running && chicken.pos[0] > canvas.width - chicken.sprite.size[0]) {
         chicken.pos[0] = canvas.width - chicken.sprite.size[0];
     }
 
-    if(chicken.pos[1] < 0) {
+    if( is_game_running && chicken.pos[1] < 0) {
         chicken.pos[1] = 0;
     }
-    else if(chicken.pos[1] > canvas.height - chicken.sprite.size[1]) {
+    else if( is_game_running && chicken.pos[1] > canvas.height - chicken.sprite.size[1]) {
         chicken.pos[1] = canvas.height - chicken.sprite.size[1];
         //game_over();
         is_game_over = true;
+    } else if ( !is_game_running && chicken.pos[1] > canvas.height ) {
+        chicken.pos[1] = canvas.height;
     }
 }
 
@@ -364,9 +384,38 @@ function render() {
 
     	// Render foreground flames
     	render_entities( flames_front );
-    } 
+    
+        if ( is_game_over ) { 
+            game_over(); 
+        }
+    } else {
+        // Render background elements
+        ctx.fillStyle = sky_pattern;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if ( is_game_over ) { game_over(); }
+        render_entity( steam );
+
+        render_entities( flames_back );
+
+        // Render blocks and chicken
+        render_entities( forks );
+
+        //var render_chicken = chicken.sprite.render(ctx);
+
+        if ( chicken.sprite.done && chicken.is_falling == false ) {
+            //dead freeze has completed, time to drop the bird into the lava!
+            chicken.is_dead = true;
+            chicken.is_falling = true;
+            //chicken.sprite = new Sprite(chicken_dead_url, [0, 0], [chicken_dead_width, chicken_dead_height], 10, [1,2,3,4,5,6], 'horizontal', [chicken_scale_x,chicken_scale_y]);
+            chicken.sprite.once = false;
+            chicken.sprite.frames = [1,2,3,4,5,6];
+        }
+        console.log(chicken.sprite.done);
+        render_entity( chicken )
+
+        // Render foreground flames
+        render_entities( flames_front );
+    }
 };
 
 function render_entities( list ) {
@@ -394,6 +443,8 @@ function game_over() {
     is_game_running = false;
     is_game_over = true;
     //alert(chicken.pos);
+    chicken.is_falling = false;
+    chicken.sprite = new Sprite(chicken_dead_url, [0, 0], [chicken_dead_width, chicken_dead_height], 10, [0,0,0,0,0,0,0,0,0,0], 'horizontal', [chicken_scale_x,chicken_scale_y], true);
 }
 
 
@@ -416,6 +467,7 @@ function reset() {
 	c = 0;
 
 	chicken.is_flapping = false; 
+    chicken.is_dead = false;
 	chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [0], 'horizontal', [chicken_scale_x,chicken_scale_y]);
     chicken.pos = [50, canvas.height / 2];
     //alert(chicken.pos);
