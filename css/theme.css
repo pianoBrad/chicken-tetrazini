@@ -34,6 +34,13 @@ body {
 	text-align: center;
 }
 
+.game-intro {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin-top: 75px;
+}
+
 .game-running {
 	position: absolute;
 	width: 100%;

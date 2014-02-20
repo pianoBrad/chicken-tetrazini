@@ -44,6 +44,7 @@ function main() {
 // Once images have loaded, time to start the game
 function init() {
 	//console.log('all resources loaded..');
+    dead_background= ctx.createPattern(resources.get('images/dead-black.png'), 'repeat');
     sky_pattern = ctx.createPattern(resources.get('images/background-tile-54px.png'), 'repeat');
 
     document.getElementById('play-again').addEventListener('mousedown', function() {
@@ -59,24 +60,25 @@ function init() {
 // Get the resources for the game
 resources.load([
     'images/background-tile-54px.png',
-    'images/chicken-sprite-sheet-72px.png',
+    'images/chicken-sprite-sheet-54px.png',
     'images/chicken-dead-sprite-sheet-63px.png',
     'images/fork.png',
     'images/steam.png',
     'images/flame-foreground-70px.png',
-    'images/flame-background-1-70px.png'
+    'images/flame-background-1-70px.png',
+    'images/dead-black.png'
 ]);
 resources.onReady(init);
 
 
 // Game states
-var chicken_width = 72;
+var chicken_width = 54;
 var chicken_height = 49;
 var chicken_dead_width = 72;
 var chicken_dead_height = 63;
 var chicken_scale_x = 1;
 var chicken_scale_y = 1;
-var chicken_url = 'images/chicken-sprite-sheet-72px.png';
+var chicken_url = 'images/chicken-sprite-sheet-54px.png';
 var chicken_dead_url = 'images/chicken-dead-sprite-sheet-63px.png';
 var chicken = {
     pos: [0, 0],
@@ -219,9 +221,17 @@ function handle_input(dt) {
        !is_game_over &&
        currently_pressed == false ) {
     	//console.log('some button pressed..');
-    	if (is_game_reset) { is_game_reset = false; is_game_running = true; chicken.is_flapping = true; chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [5, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0], 'horizontal', [chicken_scale_x,chicken_scale_y]); }
+    	if (is_game_reset) { 
+            is_game_reset = false; 
+            is_game_running = true; 
+            chicken.is_flapping = true; 
+            chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [5, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0], 'horizontal', [chicken_scale_x,chicken_scale_y]); 
+            document.getElementById('game-intro').style.display = 'none';
+            document.getElementById('score').style.display = 'block';
+            game_time = 0;
+        }
     	currently_pressed = true;
-    	console.log('flap.');
+    	//console.log('flap.');
     	// Trigger jump animation
     	if ( chicken.is_jumping == true ) {
     		//chicken.is_jumping = false;
@@ -401,7 +411,12 @@ function render() {
         // Render blocks and chicken
         render_entities( forks );
 
-        //var render_chicken = chicken.sprite.render(ctx);
+        // Render background
+        if ( is_game_over ) {
+            ctx.fillStyle = dead_background;
+            ctx.fillRect(0,0,canvas.width, canvas.height);
+        }
+        
 
         if ( chicken.sprite.done && chicken.is_falling == false ) {
             //dead freeze has completed, time to drop the bird into the lava!
@@ -411,7 +426,7 @@ function render() {
             chicken.sprite.once = false;
             chicken.sprite.frames = [1,2,3,4,5,6];
         }
-        console.log(chicken.sprite.done);
+        //console.log(chicken.sprite.done);
         render_entity( chicken )
 
         // Render foreground flames
@@ -454,7 +469,8 @@ function game_over() {
 function reset() {
     document.getElementById('game-over').style.display = 'none';
     document.getElementById('game-over-overlay').style.display = 'none';
-    document.getElementById('score').style.display = 'block';
+    document.getElementById('score').style.display = 'none';
+    document.getElementById('game-intro').style.display = 'block';
     is_game_reset = true;
     is_game_over = false;
     game_time = 0;
