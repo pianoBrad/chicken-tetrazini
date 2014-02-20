@@ -46,7 +46,7 @@ function init() {
 	//console.log('all resources loaded..');
     sky_pattern = ctx.createPattern(resources.get('images/background-tile-54px.png'), 'repeat');
 
-    document.getElementById('play-again').addEventListener('click', function() {
+    document.getElementById('play-again').addEventListener('mousedown', function() {
         reset();
     });
 
@@ -110,7 +110,7 @@ var flame_back_width = 70;
 var flame_back_height = 140;
 var game_time = 0;
 //var pipe_interval = 3;
-var fork_interval = 3;
+var fork_interval = 2.5;
 var is_game_over;
 var is_game_running = false;
 var is_game_reset = false;
@@ -172,9 +172,10 @@ function update(dt) {
 
     // Add forks at set rate (make if statement for that here)
     
-    if ( Math.floor( game_time ) % fork_interval === 0 && Math.floor( game_time ) > c && is_game_running ) {
+    if ( ( ( Math.round( game_time * 10 ) / 10 ) - c ) == fork_interval && Math.round( game_time ) > c && is_game_running ) {
     	//Every given fork_interval (in secontds), produce a new fork to travel the screen
-    	c = game_time;
+    	//c = game_time;
+        c = Math.round( game_time );
 
     	var opening = ( canvas.height ) * .3 ;
 		var random_height = ( canvas.height ) * getRandomArbitary(0.45, 0.85);
