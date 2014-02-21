@@ -102,7 +102,7 @@ var pipe_width = 84;
 var pipe_height = 319;
 **/
 var forks = [];
-var fork_width = 53;
+var fork_width = 57;
 var fork_height= 633;
 var flames_front = [];
 var flames_back = [];
