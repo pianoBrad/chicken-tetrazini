@@ -225,18 +225,21 @@ function handle_input(dt) {
             is_game_reset = false; 
             is_game_running = true; 
             chicken.is_flapping = true; 
-            chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [5, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0], 'horizontal', [chicken_scale_x,chicken_scale_y]); 
             document.getElementById('game-intro').style.display = 'none';
             document.getElementById('score').style.display = 'block';
             game_time = 0;
         }
     	currently_pressed = true;
     	//console.log('flap.');
+        chicken.sprite._index = 0;
+        chicken.sprite.frames = [3,4,5,0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
     	// Trigger jump animation
     	if ( chicken.is_jumping == true ) {
     		//chicken.is_jumping = false;
     		velocity = gravity;
-    	} else { chicken.is_jumping = true; chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [5, 0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0], 'horizontal', [chicken_scale_x,chicken_scale_y]); }
+    	} else { 
+            chicken.is_jumping = true; 
+        }
     } else if ( !input.isDown('*') &&
        !is_game_over) {
     	//console.log('nothing pressed..');
@@ -485,7 +488,7 @@ function reset() {
 
 	chicken.is_flapping = false; 
     chicken.is_dead = false;
-	chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 10, [0], 'horizontal', [chicken_scale_x,chicken_scale_y]);
+	chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 20, [0], 'horizontal', [chicken_scale_x,chicken_scale_y]);
     chicken.pos = [50, canvas.height / 2];
     //alert(chicken.pos);
 
