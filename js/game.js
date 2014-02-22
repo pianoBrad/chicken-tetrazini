@@ -44,10 +44,9 @@ function main() {
 // Once images have loaded, time to start the game
 function init() {
 	//console.log('all resources loaded..');
-    dead_background= ctx.createPattern(resources.get('images/dead-black.svg'), 'repeat');
-    steam_pattern = ctx.createPattern(resources.get('images/steam.svg'), 'repeat');
-    sky_pattern = ctx.createPattern(resources.get('images/background-tile.svg'), 'repeat');
-
+    //dead_background= ctx.createPattern(resources.get('images/dead-black.svg'), 'repeat');
+    //steam_pattern = ctx.createPattern(resources.get('images/steam.svg'), 'repeat');
+    //sky_pattern = ctx.createPattern(resources.get('images/background-tile.svg'), 'repeat');
     document.getElementById('play-again').addEventListener('mousedown', function() {
         reset();
     });
@@ -61,6 +60,7 @@ function init() {
 // Get the resources for the game
 resources.load([
     'images/background-tile.svg',
+    'images/background-tile-54px.png',
     'images/chicken-sprite-sheet.svg',
     'images/chicken-dead-sprite-sheet-63px.png',
     'images/fork.svg',
@@ -117,7 +117,6 @@ var fork_interval = 2.5;
 var is_game_over;
 var is_game_running = false;
 var is_game_reset = false;
-var sky_pattern;
 var steam_pattern;
 
 // Background/Foreground elements
@@ -389,11 +388,22 @@ function render() {
     // Render stuff if the game isn't over
     if(is_game_running || is_game_reset) {
     	// Render background elements
-    	ctx.fillStyle = sky_pattern;
+    	//ctx.fillStyle = sky_pattern;
+        ctx.fillStyle = "#006784";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for (var b = 0; b < canvas.width; b += (canvas.width/5)) {
+            ctx.fillStyle = "#005770";
+            ctx.fillRect(b,0,(canvas.width/10),canvas.height);
+        }
+        var my_gradient=ctx.createLinearGradient(0,0,1,canvas.height);
+        my_gradient.addColorStop(0,"transparent");
+        my_gradient.addColorStop(1,"rgba(208,24,0,0.75)");
+        ctx.fillStyle=my_gradient;
+        ctx.fillRect(0,0,canvas.width,canvas.height);
 
-        ctx.fillStyle = steam_pattern;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        //ctx.fillStyle = steam_pattern;
+        //ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 
         render_entities( flames_back );
 
@@ -412,8 +422,8 @@ function render() {
         ctx.fillStyle = sky_pattern;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = steam_pattern;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        //ctx.fillStyle = steam_pattern;
+        //ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         render_entities( flames_back );
 
@@ -422,8 +432,8 @@ function render() {
 
         // Render background
         if ( is_game_over ) {
-            ctx.fillStyle = dead_background;
-            ctx.fillRect(0,0,canvas.width, canvas.height);
+            //ctx.fillStyle = dead_background;
+            //ctx.fillRect(0,0,canvas.width, canvas.height);
         }
         
 
