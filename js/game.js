@@ -44,8 +44,9 @@ function main() {
 // Once images have loaded, time to start the game
 function init() {
 	//console.log('all resources loaded..');
-    dead_background= ctx.createPattern(resources.get('images/dead-black.png'), 'repeat');
-    sky_pattern = ctx.createPattern(resources.get('images/background-tile-54px.png'), 'repeat');
+    dead_background= ctx.createPattern(resources.get('images/dead-black.svg'), 'repeat');
+    steam_pattern = ctx.createPattern(resources.get('images/steam.svg'), 'repeat');
+    sky_pattern = ctx.createPattern(resources.get('images/background-tile.svg'), 'repeat');
 
     document.getElementById('play-again').addEventListener('mousedown', function() {
         reset();
@@ -59,14 +60,14 @@ function init() {
 
 // Get the resources for the game
 resources.load([
-    'images/background-tile-54px.png',
-    'images/chicken-sprite-sheet-54px.png',
+    'images/background-tile.svg',
+    'images/chicken-sprite-sheet.svg',
     'images/chicken-dead-sprite-sheet-63px.png',
-    'images/fork.png',
-    'images/steam.png',
-    'images/flame-foreground-70px.png',
-    'images/flame-background-1-70px.png',
-    'images/dead-black.png'
+    'images/fork.svg',
+    'images/steam.svg',
+    'images/flame-foreground.svg',
+    'images/flame-background.svg',
+    'images/dead-black.svg'
 ]);
 resources.onReady(init);
 
@@ -78,7 +79,7 @@ var chicken_dead_width = 72;
 var chicken_dead_height = 63;
 var chicken_scale_x = 1;
 var chicken_scale_y = 1;
-var chicken_url = 'images/chicken-sprite-sheet-54px.png';
+var chicken_url = 'images/chicken-sprite-sheet.svg';
 var chicken_dead_url = 'images/chicken-dead-sprite-sheet-63px.png';
 var chicken = {
     pos: [0, 0],
@@ -117,6 +118,7 @@ var is_game_over;
 var is_game_running = false;
 var is_game_reset = false;
 var sky_pattern;
+var steam_pattern;
 
 // Background/Foreground elements
 var num_flame = 0;
@@ -126,14 +128,14 @@ for ( f = 0; f < (canvas.width + flame_front_width); f+=flame_front_width) {
    		width: flame_front_width,
     	height: flame_front_height, //Make this variable
         pos: [0,0],
-        sprite: new Sprite('images/flame-foreground-70px.png', [0, 0], [flame_front_width, flame_front_height])
+        sprite: new Sprite('images/flame-foreground.svg', [0, 0], [flame_front_width, flame_front_height])
     });
     //Make background flame
    	flames_back.push({
    		width: flame_back_width,
     	height: flame_back_height, //Make this variable
         pos: [0,0],
-        sprite: new Sprite('images/flame-background-1-70px.png', [0, 0], [flame_back_width, flame_back_height])
+        sprite: new Sprite('images/flame-background.svg', [0, 0], [flame_back_width, flame_back_height])
     });
 
     flames_back[num_flame].pos = [f, ( canvas.height - ( canvas.height / 5) )];
@@ -141,10 +143,12 @@ for ( f = 0; f < (canvas.width + flame_front_width); f+=flame_front_width) {
     num_flame++;
 }
 
+/**
 var steam = {
 	pos: [0, 0],
-	sprite: new Sprite('images/steam.png', [0, 0], [canvas.width, canvas.height])	
+	sprite: new Sprite('images/steam.svg', [0, 0], [canvas.width, canvas.height])	
 };
+**/
 
 // The score
 var score = 0;
@@ -187,7 +191,7 @@ function update(dt) {
             is_passed: false,
     		height: random_height, //Make this variable
             pos: [0,0],
-            sprite: new Sprite('images/fork.png', [0, 0], [fork_width, fork_height])
+            sprite: new Sprite('images/fork.svg', [0, 0], [fork_width, fork_height])
         });
         forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height];
         
@@ -196,7 +200,7 @@ function update(dt) {
             is_passed: false,
     		height: random_height, //Make this variable
             pos: [0,0],
-            sprite: new Sprite('images/fork.png', [0, 0], [fork_width, fork_height])
+            sprite: new Sprite('images/fork.svg', [0, 0], [fork_width, fork_height])
         });
         forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height - ( opening + fork_height ) ];
 
@@ -388,7 +392,8 @@ function render() {
     	ctx.fillStyle = sky_pattern;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        render_entity( steam );
+        ctx.fillStyle = steam_pattern;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         render_entities( flames_back );
 
@@ -407,7 +412,8 @@ function render() {
         ctx.fillStyle = sky_pattern;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        render_entity( steam );
+        ctx.fillStyle = steam_pattern;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         render_entities( flames_back );
 
