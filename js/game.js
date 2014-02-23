@@ -58,7 +58,7 @@ function init() {
 // Get the resources for the game
 resources.load([
     'images/chicken-sprite-sheet.svg',
-    'images/chicken-dead-sprite-sheet-63px.png',
+    'images/chicken-dead-sprite-sheet.svg',
     'images/fork.svg',
     'images/flame-foreground.svg',
     'images/flame-background.svg'
@@ -74,7 +74,7 @@ var chicken_dead_height = 63;
 var chicken_scale_x = 1;
 var chicken_scale_y = 1;
 var chicken_url = 'images/chicken-sprite-sheet.svg';
-var chicken_dead_url = 'images/chicken-dead-sprite-sheet-63px.png';
+var chicken_dead_url = 'images/chicken-dead-sprite-sheet.svg';
 var chicken = {
     pos: [0, 0],
     height: chicken_height,//24,

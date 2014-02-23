@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="504px"
+	 height="63px" viewBox="0 0 504 63" enable-background="new 0 0 504 63" xml:space="preserve">
+<g id="bird_1">
+	<g id="white">
+		<rect x="51" y="6" fill="#FFFFFF" width="3" height="3"/>
+		<rect x="54" y="9" fill="#FFFFFF" width="3" height="3"/>
+		<polygon fill="#FFFFFF" points="51,12 51,15 51,18 48,18 48,21 45,21 45,24 42,24 42,27 39,27 36,27 36,24 33,24 30,24 27,24 
+			27,21 24,21 21,21 18,21 18,24 21,24 21,27 24,27 24,30 27,30 27,33 30,33 33,33 33,36 30,36 27,36 24,36 24,39 21,39 18,39 
+			18,42 21,42 24,42 24,45 27,45 30,45 30,48 33,48 36,48 39,48 39,45 42,45 42,42 45,42 45,39 45,36 48,36 48,33 48,30 48,27 
+			48,24 51,24 51,21 54,21 54,18 54,15 54,12 		"/>
+		<polygon fill="#FFFFFF" points="60,42 60,39 57,39 57,36 54,36 54,33 51,33 51,36 48,36 48,39 48,42 51,42 54,42 54,45 57,45 
+			60,45 63,45 63,42 		"/>
+	</g>
+	<g id="light_gray">
+		<rect id="black" x="51" y="9" fill="#D7D7D7" width="3" height="3"/>
+		<g>
+			<rect id="black_1_" x="48" y="30" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_2_" x="48" y="33" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_3_" x="45" y="36" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_4_" x="45" y="39" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_5_" x="42" y="42" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_6_" x="39" y="45" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_7_" x="30" y="33" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_8_" x="27" y="33" fill="#D7D7D7" width="3" height="3"/>
+		</g>
+	</g>
+	<g id="tan">
+		<rect x="48" y="9" fill="#FFD690" width="3" height="3"/>
+		<g>
+			<polygon fill="#FFD690" points="36,48 33,48 30,48 30,51 33,51 36,51 39,51 39,48 			"/>
+			<polygon fill="#FFD690" points="27,45 24,45 24,48 27,48 30,48 30,45 			"/>
+			<polygon fill="#FFD690" points="21,42 18,42 18,45 21,45 24,45 24,42 			"/>
+			<polygon fill="#FFD690" points="15,36 15,39 15,42 18,42 18,39 18,36 			"/>
+			<rect x="12" y="42" fill="#FFD690" width="3" height="3"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect id="black_9_" x="57" y="9" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_10_" x="54" y="12" fill="#F59B01" width="3" height="3"/>
+		</g>
+		<g>
+			<rect id="black_11_" x="39" y="48" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_12_" x="42" y="51" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="48,54 45,54 45,57 45,60 48,60 48,57 51,57 51,54 			"/>
+			<rect id="black_16_" x="24" y="48" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_17_" x="21" y="51" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="18,54 15,54 15,57 18,57 18,60 21,60 21,57 21,54 			"/>
+		</g>
+	</g>
+</g>
+<g id="bird_2">
+	<g id="light_gray_1_">
+		<rect id="black_13_" x="108" y="57" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_14_" x="105" y="33" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_15_" x="102" y="30" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_18_" x="102" y="27" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_19_" x="102" y="24" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_20_" x="102" y="21" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_21_" x="105" y="18" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_22_" x="108" y="15" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_23_" x="111" y="18" fill="#D7D7D7" width="3" height="3"/>
+	</g>
+	<g id="orange">
+		<rect id="black_24_" x="102" y="57" fill="#F59B01" width="3" height="3"/>
+		<rect id="black_25_" x="105" y="54" fill="#F59B01" width="3" height="3"/>
+		<rect id="black_26_" x="93" y="18" fill="#F59B01" width="3" height="3"/>
+		<polygon fill="#F59B01" points="90,12 90,15 87,15 87,18 90,18 93,18 93,15 93,12 		"/>
+		<rect id="black_30_" x="96" y="9" fill="#F59B01" width="3" height="3"/>
+		<polygon fill="#F59B01" points="93,3 93,6 90,6 90,9 93,9 96,9 96,6 96,3 		"/>
+	</g>
+	<g id="tan_1_">
+		<rect id="black_27_" x="111" y="57" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_28_" x="96" y="21" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_29_" x="96" y="18" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_31_" x="99" y="18" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_32_" x="96" y="15" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_33_" x="99" y="12" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_34_" x="99" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_35_" x="102" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_36_" x="105" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_37_" x="102" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_38_" x="105" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_39_" x="108" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_40_" x="111" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_41_" x="111" y="3" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_42_" x="114" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_43_" x="114" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_44_" x="117" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_45_" x="120" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_46_" x="120" y="6" fill="#FFD690" width="3" height="3"/>
+	</g>
+	<g id="white_1_">
+		<rect id="black_47_" x="108" y="60" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_48_" x="105" y="57" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_49_" x="108" y="54" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_50_" x="108" y="51" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_51_" x="108" y="48" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_52_" x="108" y="45" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_53_" x="108" y="42" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_54_" x="111" y="39" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_55_" x="108" y="39" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_56_" x="105" y="39" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_57_" x="111" y="36" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_58_" x="108" y="36" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_59_" x="105" y="36" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_60_" x="102" y="36" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_61_" x="102" y="33" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_62_" x="99" y="33" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_63_" x="99" y="30" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_64_" x="99" y="27" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_65_" x="99" y="24" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_66_" x="99" y="21" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_67_" x="99" y="15" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_68_" x="105" y="30" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_69_" x="108" y="33" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_70_" x="111" y="33" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_71_" x="114" y="30" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_72_" x="111" y="30" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_73_" x="108" y="30" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_74_" x="105" y="27" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_75_" x="108" y="27" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_76_" x="111" y="27" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_77_" x="114" y="27" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_78_" x="105" y="24" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_79_" x="105" y="21" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_80_" x="108" y="18" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_81_" x="108" y="21" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_82_" x="108" y="24" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_83_" x="111" y="21" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_84_" x="111" y="24" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_85_" x="114" y="24" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_86_" x="114" y="21" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_87_" x="114" y="18" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_88_" x="102" y="18" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_89_" x="102" y="15" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_90_" x="102" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_91_" x="105" y="15" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_92_" x="105" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_93_" x="108" y="9" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_94_" x="108" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_95_" x="111" y="9" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_96_" x="111" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_97_" x="111" y="15" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_98_" x="114" y="15" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_99_" x="117" y="15" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_100_" x="117" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_101_" x="114" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_102_" x="114" y="9" fill="#FFFFFF" width="3" height="3"/>
+	</g>
+</g>
+<g id="bird_3">
+	<g>
+		<rect id="black_106_" x="189" y="3" fill="#FFD690" width="3" height="3"/>
+		<g>
+			<rect id="black_190_" x="180" y="57" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_189_" x="180" y="33" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_188_" x="177" y="30" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_187_" x="177" y="27" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_186_" x="177" y="24" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_185_" x="177" y="21" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_184_" x="177" y="18" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_183_" x="180" y="15" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_182_" x="183" y="18" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_181_" x="180" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_180_" x="177" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_179_" x="171" y="18" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="168,12 168,15 165,15 165,18 168,18 171,18 171,15 171,12 			"/>
+			<rect id="black_178_" x="174" y="9" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="171,3 171,6 168,6 168,9 171,9 174,9 174,6 174,3 			"/>
+			<rect id="black_177_" x="183" y="57" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_172_" x="174" y="12" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_169_" x="177" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_167_" x="177" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_166_" x="180" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_165_" x="183" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_164_" x="183" y="3" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_105_" x="183" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_162_" x="186" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_158_" x="180" y="60" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_157_" x="177" y="57" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_155_" x="180" y="51" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_154_" x="180" y="48" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_153_" x="180" y="45" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_152_" x="180" y="42" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_151_" x="183" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_150_" x="180" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_149_" x="177" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_148_" x="183" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_147_" x="180" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_146_" x="177" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_145_" x="174" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_144_" x="174" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_143_" x="171" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_142_" x="171" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_141_" x="171" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_140_" x="171" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_139_" x="171" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_138_" x="171" y="15" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_137_" x="174" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_136_" x="177" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_135_" x="183" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_134_" x="186" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_133_" x="183" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_132_" x="180" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_131_" x="174" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_130_" x="180" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_129_" x="183" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_128_" x="186" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_127_" x="174" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_126_" x="174" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_125_" x="180" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_124_" x="180" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_123_" x="180" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_122_" x="183" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_121_" x="183" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_120_" x="186" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_119_" x="186" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_118_" x="186" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_117_" x="174" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_116_" x="174" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_114_" x="177" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_113_" x="177" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_112_" x="180" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_111_" x="180" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_110_" x="183" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_109_" x="183" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_108_" x="183" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_107_" x="186" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_104_" x="186" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_103_" x="186" y="9" fill="#FFFFFF" width="3" height="3"/>
+		</g>
+	</g>
+</g>
+<g id="bird_4">
+	<g>
+		<g>
+			<rect id="black_156_" x="249" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_159_" x="252" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_160_" x="255" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_161_" x="246" y="6" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_163_" x="246" y="3" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_168_" x="249" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_170_" x="243" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_171_" x="258" y="6" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_173_" x="258" y="3" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_174_" x="255" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_175_" x="261" fill="#F59B01" width="3" height="3"/>
+		</g>
+		<g>
+			<rect id="black_115_" x="252" y="57" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_176_" x="246" y="30" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_191_" x="246" y="27" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_192_" x="246" y="24" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_193_" x="246" y="21" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_194_" x="258" y="30" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_195_" x="258" y="27" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_196_" x="258" y="24" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_197_" x="258" y="21" fill="#D7D7D7" width="3" height="3"/>
+		</g>
+		<g>
+			<rect id="black_198_" x="267" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_199_" x="264" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_200_" x="264" y="12" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_201_" x="261" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_202_" x="258" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_203_" x="255" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_204_" x="252" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_205_" x="249" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_206_" x="246" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_207_" x="243" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_208_" x="240" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_209_" x="240" y="12" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_210_" x="237" y="6" fill="#FFD690" width="3" height="3"/>
+		</g>
+		<g>
+			<rect id="black_211_" x="252" y="60" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_212_" x="255" y="57" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_213_" x="249" y="57" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_214_" x="252" y="51" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_215_" x="252" y="48" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_216_" x="252" y="45" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_217_" x="252" y="42" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_218_" x="255" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_219_" x="252" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_220_" x="249" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_221_" x="249" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_222_" x="255" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_223_" x="252" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_224_" x="258" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_225_" x="255" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_226_" x="252" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_227_" x="249" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_228_" x="246" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_229_" x="243" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_230_" x="243" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_231_" x="243" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_232_" x="243" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_233_" x="261" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_234_" x="261" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_235_" x="261" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_236_" x="261" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_237_" x="255" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_238_" x="252" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_239_" x="249" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_240_" x="249" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_241_" x="252" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_242_" x="255" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_243_" x="249" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_244_" x="252" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_245_" x="255" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_246_" x="249" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_247_" x="252" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_248_" x="255" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_249_" x="246" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_250_" x="249" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_251_" x="252" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_252_" x="255" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_253_" x="258" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_254_" x="243" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_255_" x="243" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_256_" x="246" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_257_" x="246" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_258_" x="249" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_259_" x="249" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_260_" x="249" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_261_" x="252" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_262_" x="252" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_263_" x="252" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_264_" x="255" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_265_" x="255" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_266_" x="255" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_267_" x="258" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_268_" x="258" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_269_" x="261" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_270_" x="261" y="12" fill="#FFFFFF" width="3" height="3"/>
+		</g>
+	</g>
+</g>
+<g id="bird_5">
+	<g>
+		<rect id="black_345_" x="312" y="3" fill="#FFD690" width="3" height="3"/>
+		<g>
+			<rect id="black_344_" x="321" y="57" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_343_" x="321" y="33" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_342_" x="324" y="30" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_341_" x="324" y="27" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_340_" x="324" y="24" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_339_" x="324" y="21" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_338_" x="324" y="18" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_337_" x="321" y="15" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_336_" x="318" y="18" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_335_" x="321" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_334_" x="324" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_333_" x="330" y="18" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="336,12 336,15 339,15 339,18 336,18 333,18 333,15 333,12 			"/>
+			<rect id="black_332_" x="327" y="9" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="333,3 333,6 336,6 336,9 333,9 330,9 330,6 330,3 			"/>
+			<rect id="black_331_" x="318" y="57" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_330_" x="327" y="12" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_329_" x="324" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_328_" x="324" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_327_" x="321" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_326_" x="318" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_325_" x="318" y="3" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_324_" x="318" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_323_" x="315" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_322_" x="321" y="60" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_321_" x="324" y="57" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_320_" x="321" y="51" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_319_" x="321" y="48" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_318_" x="321" y="45" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_317_" x="321" y="42" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_316_" x="318" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_315_" x="321" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_314_" x="324" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_313_" x="318" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_312_" x="321" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_311_" x="324" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_310_" x="327" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_309_" x="327" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_308_" x="330" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_307_" x="330" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_306_" x="330" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_305_" x="330" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_304_" x="330" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_303_" x="330" y="15" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_302_" x="327" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_301_" x="324" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_300_" x="318" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_299_" x="315" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_298_" x="318" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_297_" x="321" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_296_" x="327" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_295_" x="321" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_294_" x="318" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_293_" x="315" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_292_" x="327" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_291_" x="327" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_290_" x="321" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_289_" x="321" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_288_" x="321" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_287_" x="318" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_286_" x="318" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_285_" x="315" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_284_" x="315" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_283_" x="315" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_282_" x="327" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_281_" x="327" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_280_" x="324" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_279_" x="324" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_278_" x="321" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_277_" x="321" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_276_" x="318" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_275_" x="318" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_274_" x="318" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_273_" x="315" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_272_" x="315" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_271_" x="315" y="9" fill="#FFFFFF" width="3" height="3"/>
+		</g>
+	</g>
+</g>
+<g id="bird_6">
+	<g>
+		<g id="light_gray_2_">
+			<rect id="black_433_" x="393" y="57" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_432_" x="396" y="33" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_431_" x="399" y="30" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_430_" x="399" y="27" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_429_" x="399" y="24" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_428_" x="399" y="21" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_427_" x="396" y="18" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_426_" x="393" y="15" fill="#D7D7D7" width="3" height="3"/>
+			<rect id="black_425_" x="390" y="18" fill="#D7D7D7" width="3" height="3"/>
+		</g>
+		<g id="orange_1_">
+			<rect id="black_424_" x="399" y="57" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_423_" x="396" y="54" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_422_" x="408" y="18" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="414,12 414,15 417,15 417,18 414,18 411,18 411,15 411,12 			"/>
+			<rect id="black_421_" x="405" y="9" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="411,3 411,6 414,6 414,9 411,9 408,9 408,6 408,3 			"/>
+		</g>
+		<g id="tan_2_">
+			<rect id="black_420_" x="390" y="57" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_419_" x="405" y="21" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_418_" x="405" y="18" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_417_" x="402" y="18" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_416_" x="405" y="15" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_415_" x="402" y="12" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_414_" x="402" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_413_" x="399" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_412_" x="396" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_411_" x="399" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_410_" x="396" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_409_" x="393" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_408_" x="390" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_407_" x="390" y="3" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_406_" x="387" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_405_" x="387" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_404_" x="384" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_403_" x="381" y="9" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_402_" x="381" y="6" fill="#FFD690" width="3" height="3"/>
+		</g>
+		<g id="white_2_">
+			<rect id="black_401_" x="393" y="60" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_400_" x="396" y="57" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_399_" x="393" y="54" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_398_" x="393" y="51" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_397_" x="393" y="48" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_396_" x="393" y="45" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_395_" x="393" y="42" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_394_" x="390" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_393_" x="393" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_392_" x="396" y="39" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_391_" x="390" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_390_" x="393" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_389_" x="396" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_388_" x="399" y="36" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_387_" x="399" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_386_" x="402" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_385_" x="402" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_384_" x="402" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_383_" x="402" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_382_" x="402" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_381_" x="402" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_380_" x="396" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_379_" x="393" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_378_" x="390" y="33" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_377_" x="387" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_376_" x="390" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_375_" x="393" y="30" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_374_" x="396" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_373_" x="393" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_372_" x="390" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_371_" x="387" y="27" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_370_" x="396" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_369_" x="396" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_368_" x="393" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_367_" x="393" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_366_" x="393" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_365_" x="390" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_364_" x="390" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_363_" x="387" y="24" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_362_" x="387" y="21" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_361_" x="387" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_360_" x="399" y="18" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_359_" x="399" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_358_" x="399" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_357_" x="396" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_356_" x="396" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_355_" x="393" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_354_" x="393" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_353_" x="390" y="9" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_352_" x="390" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_351_" x="390" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_350_" x="387" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_349_" x="384" y="15" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_348_" x="384" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_347_" x="387" y="12" fill="#FFFFFF" width="3" height="3"/>
+			<rect id="black_346_" x="387" y="9" fill="#FFFFFF" width="3" height="3"/>
+		</g>
+	</g>
+</g>
+<g id="bird_7">
+	<rect id="black_526_" x="465" y="54" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_525_" x="468" y="54" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_524_" x="471" y="54" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_523_" x="462" y="6" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_522_" x="462" y="3" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_521_" x="465" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_520_" x="459" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_519_" x="474" y="6" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_518_" x="474" y="3" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_517_" x="471" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_516_" x="477" fill="#F59B01" width="3" height="3"/>
+	<rect id="black_515_" x="468" y="57" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_514_" x="462" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_513_" x="462" y="27" fill="#D7D7D7" width="3" height="3"/>
+	<rect id="black_512_" x="462" y="24" fill="#D7D7D7" width="3" height="3"/>
+	<rect id="black_511_" x="462" y="21" fill="#D7D7D7" width="3" height="3"/>
+	<rect id="black_510_" x="474" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_509_" x="474" y="27" fill="#D7D7D7" width="3" height="3"/>
+	<rect id="black_508_" x="474" y="24" fill="#D7D7D7" width="3" height="3"/>
+	<rect id="black_507_" x="474" y="21" fill="#D7D7D7" width="3" height="3"/>
+	<g>
+		<rect id="black_506_" x="483" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_505_" x="480" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_504_" x="480" y="12" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_503_" x="477" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_502_" x="474" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_501_" x="471" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_500_" x="468" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_499_" x="465" y="6" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_498_" x="462" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_497_" x="459" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_496_" x="456" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_495_" x="456" y="12" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_494_" x="453" y="6" fill="#FFD690" width="3" height="3"/>
+	</g>
+	<rect id="black_493_" x="468" y="60" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_492_" x="471" y="57" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_491_" x="465" y="57" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_490_" x="468" y="51" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_489_" x="468" y="48" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_488_" x="468" y="45" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_487_" x="468" y="42" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_486_" x="471" y="39" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_485_" x="468" y="39" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_484_" x="465" y="39" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_483_" x="465" y="36" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_482_" x="471" y="36" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_481_" x="468" y="36" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_480_" x="474" y="33" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_479_" x="471" y="33" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_478_" x="468" y="33" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_477_" x="465" y="33" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_476_" x="462" y="33" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_475_" x="459" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_474_" x="459" y="27" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_473_" x="459" y="24" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_472_" x="459" y="21" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_471_" x="477" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_470_" x="477" y="27" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_469_" x="477" y="24" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_468_" x="477" y="21" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_467_" x="471" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_466_" x="468" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_465_" x="465" y="30" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_464_" x="465" y="27" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_463_" x="468" y="27" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_462_" x="471" y="27" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_461_" x="465" y="24" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_460_" x="468" y="24" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_459_" x="471" y="24" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_458_" x="465" y="21" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_457_" x="468" y="21" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_456_" x="471" y="21" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_455_" x="462" y="18" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_454_" x="465" y="18" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_453_" x="468" y="18" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_452_" x="471" y="18" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_451_" x="474" y="18" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_450_" x="459" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_449_" x="459" y="12" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_448_" x="462" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_447_" x="462" y="12" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_446_" x="465" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_445_" x="465" y="12" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_444_" x="465" y="9" fill="#FFD690" width="3" height="3"/>
+	<rect id="black_443_" x="468" y="9" fill="#FFD690" width="3" height="3"/>
+	<rect id="black_442_" x="468" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_441_" x="468" y="12" fill="#FFD690" width="3" height="3"/>
+	<rect id="black_440_" x="471" y="9" fill="#FFD690" width="3" height="3"/>
+	<rect id="black_439_" x="471" y="12" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_438_" x="471" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_437_" x="474" y="12" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_436_" x="474" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_435_" x="477" y="15" fill="#FFFFFF" width="3" height="3"/>
+	<rect id="black_434_" x="477" y="12" fill="#FFFFFF" width="3" height="3"/>
+</g>
+</svg>
