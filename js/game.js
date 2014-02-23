@@ -57,15 +57,11 @@ function init() {
 
 // Get the resources for the game
 resources.load([
-    'images/background-tile.svg',
-    'images/background-tile-54px.png',
     'images/chicken-sprite-sheet.svg',
     'images/chicken-dead-sprite-sheet-63px.png',
     'images/fork.svg',
-    'images/steam.svg',
     'images/flame-foreground.svg',
-    'images/flame-background.svg',
-    'images/dead-black.svg'
+    'images/flame-background.svg'
 ]);
 resources.onReady(init);
 
