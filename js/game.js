@@ -383,38 +383,6 @@ function check_chicken_bounds() {
 // Draw everything
 function render() {
 
-    // Render stuff if the game isn't over
-    if(is_game_running || is_game_reset) {
-    	// Render background elements
-        ctx.fillStyle = "#006784";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        for (var b = 0; b < canvas.width; b += (canvas.width/5)) {
-            ctx.fillStyle = "#005770";
-            ctx.fillRect(b,0,(canvas.width/10),canvas.height);
-        }
-        var my_gradient=ctx.createLinearGradient(0,0,1,canvas.height);
-        my_gradient.addColorStop(0,"transparent");
-        my_gradient.addColorStop(1,"rgba(208,24,0,0.75)");
-        ctx.fillStyle=my_gradient;
-        ctx.fillRect(0,0,canvas.width,canvas.height);
-
-        //ctx.fillStyle = steam_pattern;
-        //ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-
-        render_entities( flames_back );
-
-        // Render blocks and chicken
-        render_entities( forks );
-    	render_entity( chicken );
-
-    	// Render foreground flames
-    	render_entities( flames_front );
-    
-        if ( is_game_over ) { 
-            game_over(); 
-        }
-    } else {
         // Render background elements
         ctx.fillStyle = "#006784";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -428,16 +396,13 @@ function render() {
         ctx.fillStyle=my_gradient;
         ctx.fillRect(0,0,canvas.width,canvas.height);
 
-
         render_entities( flames_back );
 
-        // Render blocks and chicken
         render_entities( forks );
 
-        // Render background
         if ( is_game_over ) {
-            //ctx.fillStyle = dead_background;
-            //ctx.fillRect(0,0,canvas.width, canvas.height);
+            ctx.fillStyle = "rgba(0,0,0,0.34)";
+            ctx.fillRect(0,0,canvas.width,canvas.height);
         }
         
 
@@ -450,11 +415,17 @@ function render() {
             chicken.sprite.frames = [1,2,3,4,5,6];
         }
         //console.log(chicken.sprite.done);
-        render_entity( chicken )
+        render_entity( chicken );
 
         // Render foreground flames
         render_entities( flames_front );
-    }
+
+    // Trigger game over function, if game is over
+    if(is_game_running || is_game_reset) {
+        if ( is_game_over ) { 
+            game_over(); 
+        }
+    } 
 };
 
 function render_entities( list ) {
