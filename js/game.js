@@ -101,9 +101,9 @@ var fork_width = 57;
 var fork_height= 633;
 var flames_front = [];
 var flames_back = [];
-var flame_front_width = 70;
+var flame_front_width = 68;
 var flame_front_height = 140;
-var flame_back_width = 70;
+var flame_back_width = 68;
 var flame_back_height = 140;
 var game_time = 0;
 //var pipe_interval = 3;
@@ -111,7 +111,6 @@ var fork_interval = 2.5;
 var is_game_over;
 var is_game_running = false;
 var is_game_reset = false;
-var steam_pattern;
 
 // Background/Foreground elements
 var num_flame = 0;
