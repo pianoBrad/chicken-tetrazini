@@ -17,6 +17,8 @@ body {
 	background-color: #0a2c38;
 }
 
+.hide { display: none; visibility: hidden; }
+
 .label {
 	position: relative;
 	float: left;
@@ -87,14 +89,23 @@ body {
 #game-over #play-again {
 	background-color: #008080;
     color: #DDEEFF;
-    margin: 0px auto;
+    margin: 0px auto 10px;
     padding: 10px;
     width: 255px;
     text-align: center;
 }
 
-#game-over #play-again:hover {
+#game-over #play-again:hover,
+#game-over #mute {
 	cursor: pointer;
+}
+
+#game-over #mute {
+	width: 275px;
+    margin: 0px auto 10px;
+    padding: 0px;
+    text-align: left;
+    font-size: 30px;
 }
 
 #game {

@@ -41,12 +41,26 @@ function main() {
 	requestAnimFrame(main);
 }
 
+var is_muted = false;
+
 // Once images have loaded, time to start the game
 function init() {
 	//console.log('all resources loaded..');
     //dead_background= ctx.createPattern(resources.get('images/dead-black.svg'), 'repeat');
     document.getElementById('play-again').addEventListener('mousedown', function() {
         reset();
+    });
+
+    document.getElementById('mute').addEventListener('mousedown', function() {
+        if ( is_muted == true ) {
+            is_muted = false;
+            loop.start("background");
+            document.getElementById("mute-icon").className = "fa fa-volume-up";
+        } else {
+            is_muted = true;
+            loop.stop("background");
+            document.getElementById("mute-icon").className = "fa fa-volume-off";
+        }
     });
 
     reset();
@@ -88,10 +102,23 @@ if ( !isMobile.any() )  {
 
 var bok_url = "sounds/bok.mp3";
 var squawk_url = "sounds/squawk.mp3";
+var background_url = "sounds/background-music.mp3";
 
 var bok = new Audio(bok_url);
 var squawk = new Audio(squawk_url);
 
+function soundsLoaded() {
+    loop.start("background");
+};
+
+var loop = new SeamlessLoop();
+loop.addUri("sounds/background-music.mp3", 12320, "background");
+loop.callback(soundsLoaded);
+
+
+} else {
+    is_muted = true;
+    document.getElementById("mute").className = "hide";
 }
 
 // Game states
@@ -299,9 +326,9 @@ function handle_input(dt) {
             chicken.is_jumping = true; 
         }
         // Bok!
-        if ( !isMobile.any() )  {
-            var bawk = new Audio(bok_url);
-            bawk.play();
+        if ( !isMobile.any() && is_muted == false )  {
+            //var bawk = new Audio(bok_url);
+            //bawk.play();
         }
     } else if ( !input.isDown('*') &&
        !is_game_over) {
@@ -540,7 +567,7 @@ function game_over() {
     chicken.is_falling = false;
     chicken.sprite = new Sprite(chicken_dead_url, [0, 0], [chicken_dead_width, chicken_dead_height], 10, [0,0,0,0,0,0,0,0,0,0], 'horizontal', [chicken_scale_x,chicken_scale_y], true);
     
-    if ( !isMobile.any() )  {
+    if ( !isMobile.any() && is_muted == false )  {
         // Squawk!
         squawk.play();
     }
