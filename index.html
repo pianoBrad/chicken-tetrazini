@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+  </head>
+  <body>
+    <div id="game-over-overlay">
+    </div>
+
+    <div id="game-over">
+      <h2 class="shadow-box">You're Fried!</h2>
+      <div class="banner shadow-box">
+        <div class="label">Final Score:</div>
+        <div id="final-score" class="score"></div>
+      </div>
+      <div id="play-again" class="shadow-box">Fly Again</div>
+      <div id="mute"><i id="mute-icon" class="fa fa-volume-up"></i></div>
+    </div>
+
+    <div class="wrapper game-states">
+      <div id="game-intro" class="game-intro">
+        <img src="images/logo.svg" onerror="this.onerror=null; this.src='images/logo-350px.png'" alt="Chicken Tetrazini Logo">
+      </div>
+
+      <div class="game-running">
+        <div id="score" class="shadow score"></div>
+      </div>
+    </div>
+
+    <div id="game"></div>
+    <div id="instructions">
+        <div>
+          touch, click, or press any key to begin
+        </div>
+      </div>
+
+    <script type="text/javascript" src="js/seamlessLoop.js"></script>
+    <script type="text/javascript" src="js/resources.js"></script>
+    <script type="text/javascript" src="js/input.js"></script>
+    <script type="text/javascript" src="js/sprite.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+  </body>
+</html>

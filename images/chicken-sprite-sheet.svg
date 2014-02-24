@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="324px"
+	 height="49px" viewBox="0 0 324 49" enable-background="new 0 0 324 49" xml:space="preserve">
+<g id="Bird_1">
+	<path id="white" fill="#FFFFFF" d="M48,7V4h-3v6v6v3h-3v3h-3h-3v-3h-3h-3h-3h-3h-3h-3v-3h-3h-3v-3H9v6h3v3v3h3v3h3v3h3v3h3h3h3h3h3
+		v-3h3v-3h3v-3h3v-3h3v-6v-3h3V7H48z"/>
+	<g id="tan">
+		<g>
+			<rect y="10" fill="#FFD690" width="3" height="3"/>
+			<rect x="9" y="7" fill="#FFD690" width="3" height="3"/>
+			<polygon fill="#FFD690" points="30,34 27,34 24,34 21,34 21,31 18,31 18,28 15,28 15,25 12,25 12,19 9,19 9,16 9,10 6,10 6,13 
+				3,13 3,16 6,16 6,19 6,22 6,25 9,25 9,31 12,31 12,34 15,34 15,37 18,37 21,37 24,37 27,37 30,37 33,37 33,34 			"/>
+		</g>
+		<rect x="42" y="7" fill="#FFD690" width="3" height="3"/>
+	</g>
+	<g id="orange">
+		<g>
+			<rect x="48" y="10" fill="#F59B01" width="3" height="3"/>
+			<rect x="51" y="7" fill="#F59B01" width="3" height="3"/>
+		</g>
+		<g>
+			<rect x="18" y="37" fill="#F59B01" width="3" height="3"/>
+			<rect x="15" y="40" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="12,43 9,43 9,46 12,46 12,49 15,49 15,46 15,43 			"/>
+		</g>
+		<g>
+			<polygon fill="#F59B01" points="12,34 9,34 6,34 6,37 9,37 12,37 15,37 15,34 			"/>
+			<rect x="3" y="31" fill="#F59B01" width="3" height="3"/>
+			<rect x="3" y="37" fill="#F59B01" width="3" height="3"/>
+		</g>
+	</g>
+	<rect id="black" x="45" y="7" width="3" height="3"/>
+	<g id="light_gray">
+		<rect x="18" y="22" fill="#D7D7D7" width="3" height="3"/>
+		<polygon fill="#D7D7D7" points="27,28 24,28 24,25 21,25 21,28 18,28 18,31 21,31 24,31 27,31 30,31 30,28 		"/>
+		<polygon fill="#D7D7D7" points="33,25.001 33,25 30,25 30,28 33,28 33,28.001 36,28.001 36,25.001 		"/>
+	</g>
+</g>
+<g id="Bird_2">
+	<rect x="102" y="16" fill="#F59B01" width="3" height="3"/>
+	<polygon fill="#FFFFFF" points="102,13 102,10 99,10 99,16 99,19 99,22 96,22 96,25 93,25 90,25 90,19 87,19 87,16 84,16 84,13 
+		81,13 78,13 75,13 72,13 72,16 75,16 75,19 72,19 72,16 69,16 66,16 66,13 63,13 63,19 66,19 66,22 66,25 69,25 69,28 72,28 72,31 
+		75,31 75,34 78,34 81,34 84,34 84,37 87,37 87,34 90,34 93,34 93,31 96,31 96,28 99,28 99,25 102,25 102,19 105,19 105,13 	"/>
+	<rect id="black_1_" x="99" y="13" width="3" height="3"/>
+	<g>
+		<g>
+			<g id="orange_1_">
+				<rect x="102" y="16" fill="#F59B01" width="3" height="3"/>
+				<rect x="105" y="13" fill="#F59B01" width="3" height="3"/>
+			</g>
+			<rect x="72" y="37" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="69,40 66,40 66,43 69,43 72,43 72,40 			"/>
+		</g>
+		<polygon fill="#F59B01" points="66,34 63,34 60,34 60,37 63,37 66,37 69,37 69,34 		"/>
+		<polygon fill="#F59B01" points="57,28.001 57,31 54,31 54,34 57,34 60,34 60,31.001 60,31 60,28.001 		"/>
+	</g>
+	<rect x="102" y="16" display="none" fill="#F59B01" width="3" height="3"/>
+	<polygon id="light_gray_1_" fill="#D7D7D7" points="81,19 81,16 78,16 75,16 75,19 78,19 78,22 81,22 81,25 84,25 84,22 84,19 	"/>
+	<g>
+		<rect x="96" y="13" fill="#FFD690" width="3" height="3"/>
+		<g>
+			<polygon fill="#FFD690" points="81,34 78,34 75,34 75,31 72,31 72,28 69,28 69,25 66,25 66,22 66,19 63,19 63,16 63,13 60,13 
+				60,16 60,19 60,22 60,25 63,25 63,28 63,31 66,31 66,34 69,34 69,37 72,37 75,37 78,37 81,37 84,37 84,34 			"/>
+			<rect x="63" y="10" fill="#FFD690" width="3" height="3"/>
+			<rect x="66" y="7" fill="#FFD690" width="3" height="3"/>
+			<rect x="57" y="10" fill="#FFD690" width="3" height="3"/>
+		</g>
+	</g>
+</g>
+<g id="Bird_3">
+	<g id="orange_2_">
+		<polygon fill="#F59B01" points="120,34 117,34 117,37 120,37 123,37 123,34 		"/>
+		<rect x="156" y="19" fill="#F59B01" width="3" height="3"/>
+		<rect x="159" y="16" fill="#F59B01" width="3" height="3"/>
+		<rect x="126" y="37" fill="#F59B01" width="3" height="3"/>
+		<polygon fill="#F59B01" points="123,40 120,40 120,43 123,43 126,43 126,40 		"/>
+		<rect x="114" y="31" fill="#F59B01" width="3" height="3"/>
+		<polygon fill="#F59B01" points="111,25 111,28 108,28 108,31 111,31 114,31 114,28 114,25 		"/>
+	</g>
+	<polygon id="light_gray_2_" fill="#D7D7D7" points="135,19 135,16 135,13 135,10 132,10 129,10 129,13 129,16 129,19 132,19 
+		132,22 135,22 135,25 138,25 138,22 138,19 	"/>
+	<g id="tan_2_">
+		<rect x="123" y="7" fill="#FFD690" width="3" height="3"/>
+		<rect x="120" y="10" fill="#FFD690" width="3" height="3"/>
+		<rect x="114" y="10" fill="#FFD690" width="3" height="3"/>
+		<polygon fill="#FFD690" points="135,34 132,34 129,34 129,31 126,31 126,28 126,25 123,25 123,22 123,19 120,19 120,16 120,13 
+			117,13 117,16 117,19 117,22 117,25 117,28 120,28 120,31 120,34 123,34 123,37 126,37 129,37 132,37 135,37 138,37 138,34 		"/>
+	</g>
+	<rect x="150" y="16" fill="#FFD690" width="3" height="3"/>
+	<g>
+		<rect x="156" y="16" fill="#FFFFFF" width="3" height="3"/>
+		<rect x="153" y="13" fill="#FFFFFF" width="3" height="3"/>
+		<polygon fill="#FFFFFF" points="153,19 153,22 153,25 153,25 150,25 150,28 147,28 147,31 150,31 153,31 153,28 156,28 156,25 
+			156,25 156,22 156,19 		"/>
+		<g>
+			<path fill="#FFFFFF" d="M144,25v-3v-3h-3v-3h-3v-3v-3V7h3V4h-3h-3h-3v3h-3v3h3h3v3v3v3h3v3v3h-3v-3h-3v-3h-3h-3v-3h-3v-3h-3v3v3
+				h3v3v3h3v3v3h3v3h3h3h3v3h3v-3h3h3v-3v-3v-3H144z M138,25L138,25"/>
+			<polygon fill="#FFFFFF" points="129,13 129,10 126,10 126,13 126,16 129,16 			"/>
+		</g>
+	</g>
+	<rect id="black_2_" x="153" y="16" width="3" height="3"/>
+</g>
+<g id="bird_4">
+	<rect id="black_3_" x="207" y="12" width="3" height="3"/>
+	<g id="orange_3_">
+		<g>
+			<rect id="black_4_" x="210" y="15" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_5_" x="213" y="12" fill="#F59B01" width="3" height="3"/>
+		</g>
+		<g>
+			<rect id="black_6_" x="180" y="36" fill="#F59B01" width="3" height="3"/>
+			<polygon fill="#F59B01" points="174,33.001 174,33 171,33 168,33 168,36 171,36 174,36 174,36.001 177,36.001 177,33.001 			"/>
+			<polygon fill="#F59B01" points="177,39 174,39 174,42 177,42 180,42 180,39 			"/>
+			<polygon fill="#F59B01" points="165,27 165,30 162.003,30 162.003,33 165,33 165.003,33 168,33 168,30 168,27 			"/>
+		</g>
+	</g>
+	<g id="tan_1_">
+		<rect id="black_8_" x="204" y="12" fill="#FFD690" width="3" height="3"/>
+		<polygon fill="#FFD690" points="189,33 186,33 183,33 183,30 180,30 180,27 177,27 177,24 174,24 174,21 174,18 171,18 171,15 
+			171,12 168,12 168,15 168,18 168,21 168,24 171,24 171,27 171,30 174,30 174,33 177,33 177,36 180,36 183,36 186,36 189,36 
+			192,36 192,33 		"/>
+		<rect id="black_27_" x="165.002" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_28_" x="171" y="9" fill="#FFD690" width="3" height="3"/>
+		<rect id="black_29_" x="174" y="6" fill="#FFD690" width="3" height="3"/>
+	</g>
+	<g id="white_1_">
+		<rect id="black_7_" x="207" y="9" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_9_" x="210" y="12" fill="#FFFFFF" width="3" height="3"/>
+		<polygon fill="#FFFFFF" points="207,15 207,18 207,21 204,21 204,24 201,24 198,24 198,21 198,18 195,18 195,15 192,15 192,12 
+			189,12 186,12 183,12 180,12 180,15 183,15 186,15 189,15 189,18 192,18 192,21 192,24 189,24 189,21 186,21 186,18 183,18 
+			180,18 180,15 177,15 174,15 174,12 171,12 171,15 171,18 174,18 174,21 174,24 177,24 177,27 180,27 180,30 183,30 183,33 
+			186,33 189,33 192,33 192,36 195,36 195,33 198,33 201,33 201,30 204,30 204,27 207,27 207,24 210,24 210,21 210,18 210,15 		"/>
+	</g>
+	<polygon id="light_gray_3_" fill="#D7D7D7" points="189,18 189,15 186,15 183,15 183,18 186,18 186,21 189,21 189,24 192,24 
+		192,21 192,18 	"/>
+</g>
+<g id="bird_5">
+	<rect id="black_10_" x="261" y="6" width="3" height="3"/>
+	<g id="orange_4_">
+		<g>
+			<rect id="black_11_" x="264" y="9" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_12_" x="267" y="6" fill="#F59B01" width="3" height="3"/>
+		</g>
+		<g>
+			<g>
+				<rect id="black_13_" x="234" y="36" fill="#F59B01" width="3" height="3"/>
+				<rect id="black_14_" x="231" y="39" fill="#F59B01" width="3" height="3"/>
+				<polygon fill="#F59B01" points="228,42 225,42 225,45 228,45 228,48 231,48 231,45 231,42 				"/>
+			</g>
+			<g>
+				<polygon fill="#F59B01" points="228,33 225,33 222,33 222,36 225,36 228,36 231,36 231,33 				"/>
+				<rect id="black_18_" x="219" y="29.999" fill="#F59B01" width="3" height="3"/>
+				<rect id="black_19_" x="219" y="36" fill="#F59B01" width="3" height="3"/>
+			</g>
+		</g>
+	</g>
+	<g id="light_gray_4_">
+		<polygon fill="#D7D7D7" points="243,27 240,27 240,24 237,24 237,27 234,27 234,30 237,30 240,30 243,30 246,30 246,27 		"/>
+		<rect id="black_22_" x="234" y="21" fill="#D7D7D7" width="3" height="3"/>
+		<polygon fill="#D7D7D7" points="249,24 249,24 246,24 246,27 249,27 252,27 252,24 		"/>
+	</g>
+	<g id="tan_3_">
+		<g>
+			<polygon fill="#FFD690" points="246,33 243,33 240,33 237,33 237,30 234,30 234,27 231,27 231,24 228,24 228,24 228,21 228,18 
+				225,18 225,15 225,12 225,9 222,9 222,12 219,12 219,15 222,15 222,18 222,21 222,24 225,24 225,27 225,30 228,30 228,33 231,33 
+				231,36 234,36 237,36 240,36 243,36 246,36 249,36 249,33 			"/>
+			<rect id="black_43_" x="225" y="6" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_44_" x="216" y="9" fill="#FFD690" width="3" height="3"/>
+		</g>
+		<rect id="black_15_" x="258" y="6" fill="#FFD690" width="3" height="3"/>
+	</g>
+	<g id="white_3_">
+		<rect id="black_16_" x="261" y="3" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_17_" x="264" y="6" fill="#FFFFFF" width="3" height="3"/>
+		<polygon id="white_2_" fill="#FFFFFF" points="261,9 261,12 261,15 261,18 258,18 258,21 255,21 252,21 252,18 249,18 246,18 
+			243,18 240,18 237,18 234,18 234,15 231,15 228,15 228,12 225,12 225,15 225,18 228,18 228,21 228,24 231,24 231,27 234,27 
+			237,27 237,24 234,24 234,21 237,21 237,24 240,24 240,24 240,27 243,27 246,27 246,24 249,24 252,24 252,27 249,27 246,27 
+			246,29.998 243,29.998 243,30 240,30 237,30 237,33 240,33 243,33 243,32.998 246,32.998 246,33 249,33 249,32.999 252,32.999 
+			252,30 255,30 255,27 258,27 258,24 261,24 261,21 264,21 264,18 264,15 264,12 264,9 		"/>
+	</g>
+</g>
+<g id="bird_6">
+	<rect id="black_20_" x="312" y="3" width="3" height="3"/>
+	<g id="orange_5_">
+		<g>
+			<rect id="black_21_" x="318" y="3" fill="#F59B01" width="3" height="3"/>
+			<rect id="black_23_" x="315" y="6" fill="#F59B01" width="3" height="3"/>
+		</g>
+		<g>
+			<g>
+				<rect id="black_24_" x="291" y="36" fill="#F59B01" width="3" height="3"/>
+				<polygon fill="#F59B01" points="288,39 288,42 285,42 285,45 288,45 288,48 291,48 291,45 291,42 291,39 				"/>
+			</g>
+			<g>
+				<polygon fill="#F59B01" points="282,33 282,36 282,39 285,39 285,36 285,33 				"/>
+				<polygon fill="#F59B01" points="279,39 276,39 276,42 279,42 279,45 282,45 282,42 282,39 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="light_gray_5_">
+		<rect id="black_25_" x="294" y="21" fill="#D7D7D7" width="3" height="3"/>
+		<rect id="black_26_" x="294" y="33" fill="#D7D7D7" width="3" height="3"/>
+		<polygon fill="#D7D7D7" points="291,24 291,27 291,30 291,33 294,33 294,30 294,27 294,24 		"/>
+	</g>
+	<g id="tan_4_">
+		<g>
+			<rect id="black_30_" x="270" y="15" fill="#FFD690" width="3" height="3"/>
+			<rect id="black_32_" x="279" y="12" fill="#FFD690" width="3" height="3"/>
+			<polygon fill="#FFD690" points="282,30 282,27 282,24 279,24 279,21 279,18 279,15 276,15 276,18 273,18 273,21 276,21 276,24 
+				276,27 276,30 279,30 279,33 282,33 285,33 285,30 			"/>
+			<polygon fill="#FFD690" points="291,33 291,30 288,30 288,33 285,33 285,36 288,36 291,36 294,36 294,33 			"/>
+		</g>
+		<rect id="black_31_" x="309" y="3" fill="#FFD690" width="3" height="3"/>
+	</g>
+	<g id="white_4_">
+		<rect id="black_33_" x="312" fill="#FFFFFF" width="3" height="3"/>
+		<rect id="black_34_" x="315" y="3" fill="#FFFFFF" width="3" height="3"/>
+		<g>
+			<polygon fill="#FFFFFF" points="312,6 312,9 312,12 312,15 312,18 309,18 306,18 303,18 300,18 297,18 297,21 297,24 294,24 
+				294,27 294,30 294,33 297,33 297,36 297,39 300,39 300,36 303,36 303,33 306,33 306,30 309,30 309,27 312,27 312,24 315,24 
+				315,21 315,18 315,15 315,12 315,9 315,6 			"/>
+			<polygon fill="#FFFFFF" points="291,21 288,21 285,21 285,18 282,18 279,18 279,21 279,24 282,24 282,27 282,30 285,30 285,33 
+				288,33 288,30 291,30 291,27 291,24 294,24 294,21 			"/>
+		</g>
+	</g>
+</g>
+</svg>
