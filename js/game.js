@@ -65,12 +65,34 @@ resources.load([
 ]);
 resources.onReady(init);
 
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i) ? true : false;
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) ? true : false;
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+    }
+};
+
 // Set sounds up
+if ( !isMobile.any() )  {
+
 var bok_url = "sounds/bok.mp3";
 var squawk_url = "sounds/squawk.mp3";
 
 var bok = new Audio(bok_url);
 var squawk = new Audio(squawk_url);
+
+}
 
 // Game states
 var chicken_width = 54;
@@ -277,8 +299,10 @@ function handle_input(dt) {
             chicken.is_jumping = true; 
         }
         // Bok!
-        var bawk = new Audio(bok_url);
-        bawk.play();
+        if ( !isMobile.any() )  {
+            var bawk = new Audio(bok_url);
+            bawk.play();
+        }
     } else if ( !input.isDown('*') &&
        !is_game_over) {
     	//console.log('nothing pressed..');
@@ -515,8 +539,11 @@ function game_over() {
     //alert(chicken.pos);
     chicken.is_falling = false;
     chicken.sprite = new Sprite(chicken_dead_url, [0, 0], [chicken_dead_width, chicken_dead_height], 10, [0,0,0,0,0,0,0,0,0,0], 'horizontal', [chicken_scale_x,chicken_scale_y], true);
-    // Squawk!
-    squawk.play();
+    
+    if ( !isMobile.any() )  {
+        // Squawk!
+        squawk.play();
+    }
 }
 
 
