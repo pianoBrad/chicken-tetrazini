@@ -128,7 +128,7 @@ canvas {
 
 #instructions {
 	text-align: center;
-	margin-top: 10px
+	margin: 10px 0px;
 }
 
 /*************************************************
@@ -136,23 +136,9 @@ canvas {
 *************************************************/
 
 @media(min-width: 500px) { 
-	/** .tetrazini-banner { width: 468px; height: 60px; } **/
-
-	/**
-	.game-running, #game-over, .game-intro {
-		margin-top: 135px;
-	}
-	**/
 	
 }
 @media(min-width: 800px) { 
-	/** .tetrazini-banner { width: 728px; height: 90px; } **/
-	
-	/**
-	.game-running, #game-over, .game-intro {
-		margin-top: 165px;
-	}
-	**/
 	
 }
 
