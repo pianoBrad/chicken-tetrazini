@@ -97,6 +97,7 @@ var pipe_width = 84;
 var pipe_height = 319;
 **/
 var forks = [];
+var feathers = [];
 var fork_width = 57;
 var fork_height= 633;
 var flames_front = [];
@@ -161,6 +162,11 @@ var drop_rate = 0.1;
 
 // Update the game objects
 var c = 0;
+var feather_int = 0.35;
+var feather_time_elapsed = 0;
+var feather_speed = 0.75;
+var feather_gravity = 0.5;
+var feather_degrade = 0.0075;
 function update(dt) {
 	if ( isNaN( dt ) ) { dt = 0; }
     game_time += dt;
@@ -196,6 +202,34 @@ function update(dt) {
         });
         forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height - ( opening + fork_height ) ];
 
+    }
+
+    // Add feathers that trail behind the flapping chicken
+
+    // Chicken is flapping & still moving, so keep adding feathers at set interval!
+    if ( ( ( Math.round(game_time * 100 ) / 100 ) - feather_time_elapsed ) >= feather_int && Math.round( game_time ) > feather_time_elapsed && is_game_running && chicken.is_flapping ) {
+        feather_time_elapsed = game_time;
+        feathers.push({
+            opacity: 1,
+            gravity: ( Math.random() / 10 ) + feather_gravity,
+            speed: ( Math.random() / 10 ) + feather_speed,
+            pos: [chicken.pos[0], chicken.pos[1]],
+            fill_style: "rgba(255,255,255,1)"
+        });
+        feathers.push({
+            opacity: 1,
+            gravity: ( Math.random() / 10 ) + feather_gravity,
+            speed: ( Math.random() / 10 ) + feather_speed,
+            pos: [ ( ( Math.random() * 5) + chicken.pos[0] ), ( ( Math.random() * 30 ) + chicken.pos[1] )],
+            fill_style: "rgba(255,255,255,1)"
+        });
+        feathers.push({
+            opacity: 1,
+            gravity: ( Math.random() / 10 ) + feather_gravity,
+            speed: ( Math.random() / 10 ) + feather_speed,
+            pos: [ ( ( Math.random() * 15) + chicken.pos[0] ), ( ( Math.random() * 15 ) + chicken.pos[1] )],
+            fill_style: "rgba(255,255,255,1)"
+        });
     }
 
 
@@ -272,6 +306,10 @@ function update_entities( dt ) {
 
    	chicken.sprite.update( dt );
 
+    // Update any feathers on the screen
+    for (var f = 0; f<feathers.length; f++) {
+    }
+
     // Update all the forks
     for(var i=0; i<forks.length; i++) {
         forks[i].pos[0] -= fork_speed * dt;
@@ -312,6 +350,19 @@ function update_entities( dt ) {
     		flames_back[f].pos[0] -= flame_back_speed;
     	} 
     } 
+
+    // Update feather positions + opacities
+    for ( var f = 0; f < feathers.length; f++ ) {
+        if ( feathers[f].opacity - feather_degrade >= 0 && feathers[f].pos[0] >= 0 && feathers[f].pos[1] <= canvas.height ) {
+            feathers[f].opacity = feathers[f].opacity - feather_degrade;
+            feathers[f].fill_style = "rgba(255,255,255,"+feathers[f].opacity+")";
+            feathers[f].pos[1] += feathers[f].gravity;
+            feathers[f].pos[0] -= feathers[f].speed;
+        } else {
+            feathers.splice(f, 1);
+        }
+        
+    }
 }
 
 
@@ -412,6 +463,11 @@ function render() {
         //console.log(chicken.sprite.done);
         render_entity( chicken );
 
+        for ( var f = 0; f < feathers.length; f++ ) {
+            ctx.fillStyle = feathers[f].fill_style,
+            ctx.fillRect (feathers[f].pos[0],feathers[f].pos[1],3,3);
+        }
+
         // Render foreground flames
         render_entities( flames_front );
 
@@ -476,6 +532,7 @@ function reset() {
     chicken.is_dead = false;
 	chicken.sprite = new Sprite(chicken_url, [0, 0], [chicken_width, chicken_height], 20, [0], 'horizontal', [chicken_scale_x,chicken_scale_y]);
     chicken.pos = [50, canvas.height / 2];
+    feather_time_elapsed = 0;
     //alert(chicken.pos);
 
     //reset the flames to original positions
