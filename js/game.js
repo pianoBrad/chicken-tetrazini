@@ -16,6 +16,7 @@ function getRandomArbitary (min, max) {
     return Math.random() * (max - min) + min;
 }
 
+
 // Create the canvas
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
@@ -26,6 +27,10 @@ canvas.height = 568;//480;
 // document.getElementById('score').style.margin=(canvas.height/20)+"px 0px";
 document.getElementById('game').appendChild(canvas);
 
+
+Element.prototype.hasClass = function(className) {
+    return this.className && new RegExp("(^|\\s)" + className + "(\\s|$)").test(this.className);
+};
 
 
 // The main game loop
@@ -68,16 +73,45 @@ function init() {
     main();
 }
 
-
-// Get the resources for the game
-resources.load([
-    'images/chicken-sprite-sheet.svg',
-    'images/chicken-dead-sprite-sheet.svg',
-    'images/fork.svg',
-    'images/flame-foreground.svg',
-    'images/flame-background.svg'
-]);
-resources.onReady(init);
+var use_svg = true;
+/**
+if ( document.getElementById('tetrazini').hasClass('svg') == true ) { 
+    use_svg = true;  
+} else { 
+    use_svg = false; 
+}
+**/
+if ( use_svg == false ) {
+    var chicken_url = 'images/chicken-sprite-sheet.svg';
+    var chicken_dead_url = 'images/chicken-dead-sprite-sheet.svg';
+    var flame_foreground_url = 'images/flame-foreground.svg';
+    var flame_background_url = 'images/flame-background.svg';
+    var fork_url = 'images/fork.svg';
+    // Get the resources for the game
+    resources.load([
+        'images/chicken-sprite-sheet.svg',
+        'images/chicken-dead-sprite-sheet.svg',
+        'images/fork.svg',
+        'images/flame-foreground.svg',
+        'images/flame-background.svg'
+    ]);
+    resources.onReady(init);
+    } else {
+    var chicken_url = 'images/chicken-sprite-sheet-54px.png';
+    var chicken_dead_url = 'images/chicken-dead-sprite-sheet-63px.png';
+    var flame_foreground_url = 'images/flame-foreground-70px.png';
+    var flame_background_url = 'images/flame-background-70px.png';
+    var fork_url = 'images/fork.png';
+    // Get the resources for the game
+    resources.load([
+        'images/chicken-sprite-sheet-54px.png',
+        'images/chicken-dead-sprite-sheet-63px.png',
+        'images/fork.png',
+        'images/flame-foreground-70px.png',
+        'images/flame-background-70px.png'
+    ]);
+    resources.onReady(init);
+}
 
 var isMobile = {
     Android: function() {
@@ -128,8 +162,6 @@ var chicken_dead_width = 72;
 var chicken_dead_height = 63;
 var chicken_scale_x = 1;
 var chicken_scale_y = 1;
-var chicken_url = 'images/chicken-sprite-sheet.svg';
-var chicken_dead_url = 'images/chicken-dead-sprite-sheet.svg';
 var chicken = {
     pos: [0, 0],
     height: chicken_height,//24,
@@ -176,14 +208,14 @@ for ( f = 0; f < (canvas.width + flame_front_width); f+=flame_front_width) {
    		width: flame_front_width,
     	height: flame_front_height, //Make this variable
         pos: [0,0],
-        sprite: new Sprite('images/flame-foreground.svg', [0, 0], [flame_front_width, flame_front_height])
+        sprite: new Sprite(flame_foreground_url, [0, 0], [flame_front_width, flame_front_height])
     });
     //Make background flame
    	flames_back.push({
    		width: flame_back_width,
     	height: flame_back_height, //Make this variable
         pos: [0,0],
-        sprite: new Sprite('images/flame-background.svg', [0, 0], [flame_back_width, flame_back_height])
+        sprite: new Sprite(flame_background_url, [0, 0], [flame_back_width, flame_back_height])
     });
 
     flames_back[num_flame].pos = [f, ( canvas.height - ( canvas.height / 5) )];
@@ -244,7 +276,7 @@ function update(dt) {
             is_passed: false,
     		height: random_height, //Make this variable
             pos: [0,0],
-            sprite: new Sprite('images/fork.svg', [0, 0], [fork_width, fork_height])
+            sprite: new Sprite(fork_url, [0, 0], [fork_width, fork_height])
         });
         forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height];
         
@@ -253,7 +285,7 @@ function update(dt) {
             is_passed: false,
     		height: random_height, //Make this variable
             pos: [0,0],
-            sprite: new Sprite('images/fork.svg', [0, 0], [fork_width, fork_height])
+            sprite: new Sprite(fork_url, [0, 0], [fork_width, fork_height])
         });
         forks[(forks.length - 1)].pos = [canvas.width, forks[(forks.length - 1)].height - ( opening + fork_height ) ];
 
