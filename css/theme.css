@@ -19,7 +19,32 @@ body {
 
 .ad {
 	text-align: center;
+	padding-bottom: 10px;
 }
+
+.share {
+	padding: 10px 0px;
+    width: 320px;
+    margin: 0px auto;
+    overflow: auto;
+}
+
+.share > * {
+	width: 33.333%;
+	position: relative;
+	float: left;
+	text-align: center;
+}
+
+.share a { color: #ddeeff; }
+.share a:hover,
+.share a:active {}
+
+.fa-stack-2x {
+	color: #006784;
+}
+
+a:hover .fa-stack-2x { color: #d01800; }
 
 .hide { display: none; visibility: hidden; }
 
@@ -116,7 +141,8 @@ body {
 }
 
 #game {
-	margin-top: 35px;
+	/** margin-top: 35px; **/
+	margin-top: 0px;
 }
 
 canvas {
